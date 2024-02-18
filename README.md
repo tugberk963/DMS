@@ -131,11 +131,22 @@ Users can list available appointment dates for desired doctor.
 ```rust
 fn list_dates(provider_id: String, department_name: String, doctors_name: String) -> Vec<String>
 ```
-### Listing Dates
+### Listing Times
 Users can list available appointment times for desired dates on selected doctor.
 ```rust
 fn list_times(provider_id: String, department_name: String, doctors_name: String, selected_date: String) -> Vec<String> 
 ```
+### Making Appointment 
+Users can make appointment. If provider has the available appointment according to users input. That appointment will be deleted from providers appointment list and will be added into users active appointments list.
+```rust
+fn make_appointment(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>{
+```
+### Listing Appointments
+Users can his active appointments.
+```rust
+fn list_appointments(user_id: String) -> HashMap<Principal, Vec<AppointmentDetails>> {
+```
+
 ## Provider Functionalities
 
 ## Admin Functionalities
