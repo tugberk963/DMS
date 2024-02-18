@@ -4,6 +4,7 @@
 
 ## Content 
 
+- [Project Team - Individual](#project-team-individual)
 - [Project Description - Purpose](#project-description-purpose)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
@@ -14,6 +15,7 @@
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
+## Project Team
 ## Project Description - Purpose 
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as back-end canisters. </i> </strong>
 ## Project Vision
