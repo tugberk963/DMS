@@ -44,12 +44,16 @@ Setting up Rust
 For starting project on our local. You can simply use the command below.
 ```bash
 cd ICP_Internship_Bootcamp_Final_Project/
+```
+```bash
 dfx start --clean
 ```
 ### Deploying Canisters
 For deploying canisters and generating our canister interface. You can use the command below.
 ```bash
 cd ICP_Internship_Bootcamp_Final_Project/
+```
+```bash
 dfx deploy
 ```
 Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
