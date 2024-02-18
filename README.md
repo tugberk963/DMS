@@ -16,7 +16,7 @@
 - [Testing Process](#tests)
 
 ## Project Name
-DMS: Medical Service Provider on Internet Computer
+DMS: Medical Service Provider on <b><a href="https://internetcomputer.org/"> Internet Computer </a></b>.
 <br> <br> <b> <i> DMS stands for Decentralized Medical Services </b> </i> 
 ## Project Team - Individual
 Tuğberk Serçe :D
