@@ -5,7 +5,6 @@
 ## Content 
 
 - [Project Description - Purpose](#project-description-purpose)
-- [Project Features](#project-description)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
   -  [Setting up IC CDK](#setting-up-ic-cdk)
