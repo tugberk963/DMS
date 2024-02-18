@@ -171,6 +171,7 @@ Users can list his active appointments.
 fn list_appointments(user_id: String) -> HashMap<Principal, Vec<AppointmentDetails>> 
 ```
 ## Provider Functionalities
+In DMS, providers refer to any facility that is a health or medical service provider.
 ### Adding Departments
 Providers can add departments to themselves.
 ```rust
