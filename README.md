@@ -18,6 +18,7 @@
 ## Project Description - Purpose 
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as back-end canisters. </i> </strong>
 ## Project Vision
+The primary vision of the project is to establish DMS as the central platform for healthcare service providers and patients worldwide. Through the vast data flow integrated into DMS, we empower its AI capabilities, transforming it into an efficient and proactive predictive healthcare service provider. Additionally, hospitals can offer privileges to their users in exchange for the grants they receive, provided that they utilize DMS. This strategic approach aims to revolutionize healthcare delivery, offering advanced and personalized services to users globally.
 ### Single Interface for Patients and Healthcare Providers:
 DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on <b><a href="https://internetcomputer.org/"> Internet Computer </a></b>.
 ### Medical Record Security:
