@@ -11,7 +11,7 @@
   -  [Setting up IC CDK](#setting-up-ic-cdk)
   -  [Setting up Rust](#setting-up-rust)
   -  [Starting Server](#starting-server)
-  -  [Deploying Canisters](#deploying-project)
+  -  [Deploying Canisters](#deploying-canisters)
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
