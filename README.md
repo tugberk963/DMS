@@ -1,9 +1,9 @@
 # DMS - Decentralized Medical Services - ICP Internship Bootcamp Final Project
 
-# Project Name: DMS: Medical Service Provider on Internet Computer
+
 
 ## Content 
-
+- [Project Name](#project-name)
 - [Project Team](#project-team---individual)
 - [Project Description - Purpose](#project-description---purpose)
 - [Project Vision](#project-vision)
@@ -15,6 +15,9 @@
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
+## Project Name
+DMS: Medical Service Provider on Internet Computer
+<b> <i> DMS stands for Decentralized Medical Services </b> </i> 
 ## Project Team - Individual
 Tuğberk Serçe :D
 ## Project Description - Purpose 
