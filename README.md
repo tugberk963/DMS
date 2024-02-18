@@ -28,6 +28,7 @@ DMS collects and leverages data to train machine learning models for predictive 
 ###  Grant System for Data Sharing:
 DMS implements a grant system where individuals providing health data are rewarded with grants. Hospitals, as the institutions approving this data, receive grants based on the number of patients they approve. These grants contribute to financing the privileged healthcare services offered to DMS users.
 
+<b> Please click on image for better view. </b>
 </br><img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/GrantSystem.png"></br>
 
 ### Enhanced Healthcare Services through AI:
