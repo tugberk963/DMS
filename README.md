@@ -19,7 +19,7 @@
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as back-end canisters. </i> </strong>
 ## Project Vision
 ### Single Interface for Patients and Healthcare Providers:
-DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on Internet Computer.
+DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on <b> Internet Computer </b>.
 ### Medical Record Security:
 Patients' medical records are securely stored on the Internet Computer platform. Data is protected with end-to-end encryption and robust security protocols, ensuring that access is restricted to authorized users only.
 ### Utilization of Data for Predictive Healthcare Services:
