@@ -14,6 +14,18 @@
   -  [Deploying Canisters](#deploying-canisters)
 - [Project Tree](#project-tree)
 - [Project Functionalities](#functions)
+    -[Authentication](#authentication)
+      -[Signup](#signup)
+      -[Login](#login)
+      -[Logout](#logout)
+    -[User Functionalities](#user-functionalities)
+      -[Listing Providers](#listing-providers)
+      -[Listing Departments](#listing-departments)
+      -[Listing Doctors](#listing-doctors)
+      -[Listing Dates](#listing-dates)
+      -[Listing Times](#listing-times)
+      -[Making Appointment](#making-appointment)
+      -[Listing Appointments](#listing-appointments)
 - [Testing Process](#tests)
 
 ## Project Name
