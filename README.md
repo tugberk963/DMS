@@ -19,9 +19,9 @@
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as back-end canisters. </i> </strong>
 ## Project Vision
 ### Single Interface for Patients and Healthcare Providers:
-DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on <b> <a href="https://internetcomputer.org/"> Internet Computer </a> </b>.
+DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on <b><a href="https://internetcomputer.org/"> Internet Computer </a></b>.
 ### Medical Record Security:
-Patients' medical records are securely stored on the Internet Computer platform. Data is protected with end-to-end encryption and robust security protocols, ensuring that access is restricted to authorized users only.
+Patients' medical records are securely stored on the  <b> <a href="https://internetcomputer.org/"> Internet Computer </a> </b>. Data is protected with end-to-end encryption and robust security protocols, ensuring that access is restricted to authorized users only.
 ### Utilization of Data for Predictive Healthcare Services:
 
 DMS collects and leverages data to train machine learning models for predictive healthcare services. These models analyze patterns and trends within the data to make predictions related to patients' health outcomes, potential diseases, or treatment effectiveness.
