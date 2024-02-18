@@ -5,10 +5,10 @@ Welcome to your new final_project project and to the internet computer developme
 ## Content 
 
 - [Setup](#setup)
-  -  [Setting up IC CDK](#ic_cdk)
-  -  [Setting up Rust](#rust)
+  -  [Setting up IC CDK](#setting-up-ic-cdk)
+  -  [Setting up Rust](#setting-up-rust)
   -  [Starting Server](#starting_server)
-  -  [Deploying Project](#deploying_project)
+  -  [Deploying Project](#deploying-project)
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
