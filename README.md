@@ -12,6 +12,7 @@
   -  [Setting up Rust](#setting-up-rust)
   -  [Starting Server](#starting-server)
   -  [Deploying Canisters](#deploying-canisters)
+- [Project Tree](#project-tree)
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
@@ -81,4 +82,26 @@ If you are making frontend changes, you can start a development server with
 npm start
 ```
 Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+## Project Tree
+.
+├── Cargo.toml
+├── icp_internship_bootcamp_final_project_backend.did // Candid functions 
+└── src
+    ├── administration.rs -> Super User functions | a.k.a admins.
+    ├── auth.rs -> Login - Signup - Logout
+    ├── lib.rs ->  Type definitions.
+    ├── provider_utils.rs -> Medical Service <b>Providers </b> functions.
+    └── user_utils.rs -> User functions
+## Authenticiation 
+### Login
 
+### Signup
+
+### Logout
+## User Functionalities
+```rust
+
+```
+## Provider Functionalities
+
+## Admin Functionalities
