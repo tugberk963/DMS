@@ -15,8 +15,6 @@ Welcome to your new final_project project and to the internet computer developme
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
-
-
 ## Project Description
 Project Description
 
