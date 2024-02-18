@@ -4,7 +4,7 @@ Welcome to your new final_project project and to the internet computer developme
 
 ## Content 
 
-- [Setup](#setup)
+- [Project Setup](#project-setup)
   -  [Setting up IC CDK](#setting-up-ic-cdk)
   -  [Setting up Rust](#setting-up-rust)
   -  [Starting Server](#starting-server)
