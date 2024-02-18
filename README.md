@@ -4,6 +4,9 @@ Welcome to your new final_project project and to the internet computer developme
 
 ## Content 
 
+- [Project Description](#project-description)
+- [Project Purpose](#project-purpose)
+- [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
   -  [Setting up IC CDK](#setting-up-ic-cdk)
   -  [Setting up Rust](#setting-up-rust)
@@ -14,6 +17,14 @@ Welcome to your new final_project project and to the internet computer developme
 
 
 
+## Project Description
+Project Description
+
+## Project Purpose
+Project Purpose
+
+## Project Vision
+Project Vision
 
 ## Project Setup
 ### Setting up IC CDK
