@@ -17,7 +17,7 @@
 
 ## Project Name
 DMS: Medical Service Provider on Internet Computer
-<br> <b> <i> DMS stands for Decentralized Medical Services </b> </i> 
+<br> <br> <b> <i> DMS stands for Decentralized Medical Services </b> </i> 
 ## Project Team - Individual
 Tuğberk Serçe :D
 ## Project Description - Purpose 
