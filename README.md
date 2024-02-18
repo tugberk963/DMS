@@ -88,8 +88,8 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 ├── Cargo.toml
 ├── icp_internship_bootcamp_final_project_backend.did // Candid functions 
 └── src
-    ├── administration.rs -> Super User functions | a.k.a admins.
-    ├── auth.rs -> Login - Signup - Logout
+    ├── administration.rs -> Super User functions | a.k.a. admin.
+    ├── auth.rs -> Login - Signup - Logout functions.
     ├── lib.rs ->  Type definitions.
     ├── provider_utils.rs -> Medical Service <b>Providers </b> functions.
     └── user_utils.rs -> User functions
