@@ -91,7 +91,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     ├── administration.rs -> Super User functions | a.k.a. admin.
     ├── auth.rs -> Login - Signup - Logout functions.
     ├── lib.rs ->  Type definitions.
-    ├── provider_utils.rs -> Medical Service Providers' functions.
+    ├── provider_utils.rs -> Medical Service Provider functions.
     └── user_utils.rs -> User functions
 ```
 ## Authenticiation 
