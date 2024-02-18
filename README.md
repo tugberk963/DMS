@@ -116,6 +116,16 @@ Users can list active providers ( Hospitals,  health clinics.) on DMS.
 ```rust
 fn list_providers() -> Vec<String>
 ```
+### Listing Departments
+Users can list selected providers departments, for example Neurology.
+```rust
+fn list_departments(provider_id: String) -> Vec<String>
+```
+### Listing Doctors
+Users can list selected departments doctors.
+```rust
+fn list_doctors(provider_id: String, department_name: String) -> Vec<String>
+```
 ## Provider Functionalities
 
 ## Admin Functionalities
