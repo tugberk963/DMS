@@ -35,9 +35,18 @@ AI-driven predictive models optimize resource allocation and improve healthcare 
 <br> </br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/GrantSystem.png"> <br> </br>
 ## Project Setup
 ### Setting up IC CDK
-Setting up IC_CDK
+```bash
+sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+```
+For more information or platform specific setup instructions see : <a src="https://internetcomputer.org/docs/current/developer-docs/getting-started/install/" >ICP DOCS : IC_CDK</a>
 ### Setting up Rust
-Setting up Rust
+```bash
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+```bash
+rustup target add wasm32-unknown-unknown
+```
+For more information or platform specific setup instructions see : <a src="https://internetcomputer.org/docs/current/developer-docs/backend/rust/dev-env" > ICP DOCS : Rust</a>
 ### Starting Server
 For starting project on our local. You can simply use the command below.
 ```bash
