@@ -1,0 +1,49 @@
+type Principal = blob;
+
+type User = record {
+  username: text;
+  password: text;
+};
+
+type Session = record {
+  user_id: text;
+};
+
+type AppointmentDetails = record {
+  department : text;
+  doctor: text;
+  date: text;
+  time: text;
+};
+
+service : {
+  // auth functions
+  sign_up : (text, text) -> (variant { Ok : null; Err : text });
+  login : (text, text) -> (variant { Ok : null; Err : text });
+  logout : () -> ();
+  
+  // administration functions
+  is_logged_in : (text) -> (bool);
+  list_active_sessions: () -> (vec text);
+  list_signed_users: () -> (vec text);
+  set_provider: (text) -> (variant {Ok: null; Err: text});
+  list_providers: () -> (vec text);
+  remove_provider: (text) -> (variant {Ok: null; Err: text});
+
+  // user functions
+  make_appointment: (text, text, text, text, text) -> (variant {Ok: null; Err: text});
+  list_appointments : (text) -> (opt Principal, vec AppointmentDetails,);
+
+  // provider functions
+  // listing
+  list_departments : (provider_id: text) -> (vec text);
+  list_doctors: (provider_id: text, department_name: text) -> (vec text);
+  list_dates: (provider_id: text, department_name: text, doctors_name: text) -> (vec text);
+  list_times: (provider_id: text, department_name: text, doctors_name: text, selected_date: text) -> (vec text);
+
+  // adding
+  add_department : (provider_id: text, department_name: text) -> (variant {Ok: null; Err: text});
+  add_doctor : (provider_id: text, department_name: text, doctor_name: text) -> (variant {Ok: null; Err: text});
+  add_date : (provider_id: text, department_name: text, doctor_name: text, date: text) -> (variant {Ok: null; Err: text});
+  add_time : (provider_id: text, department_name: text, doctor_name: text, date: text, time: text) -> (variant {Ok: null; Err: text});
+};
