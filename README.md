@@ -1,11 +1,12 @@
 # DMS - Decentralized Medical Services - ICP Internship Bootcamp Final Project
 
-Welcome to your new final_project project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+# Project Name: DMS: Medical Service Provider on Internet Computer
 
 ## Content 
 
-- [Project Description](#project-description)
+
 - [Project Purpose](#project-purpose)
+- [Project Features](#project-description)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
   -  [Setting up IC CDK](#setting-up-ic-cdk)
@@ -15,12 +16,20 @@ Welcome to your new final_project project and to the internet computer developme
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
-## Project Description
-Project Description
-
 ## Project Purpose
-Project Purpose
+DMS aims to bring together healthcare service providers (hospitals, health clinics, etc.) and patients, facilitating processes such as appointment scheduling and secure storage of medical records.
 
+## Project Features
+### Patient and Healthcare Providers on Single Interface:
+  Patients can perform tasks such as scheduling appointments, searching for doctors, and viewing medical records.
+  Healthcare providers can handle tasks like doctor assignment, appointment tracking, and updating medical records.
+### Appointment Scheduling System:
+  Patients can schedule appointments with suitable doctors or departments through DMS.
+  The appointment calendar displays the availability of doctors and allows patients to book appointments at their preferred times.
+### Medical Record Security:
+  Patients' medical records are securely stored on the Internet Computer.
+  Data is protected with end-to-end encryption and robust security protocols.
+  Access is restricted to authorized users only.
 ## Project Vision
 Project Vision
 
