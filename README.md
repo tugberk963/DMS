@@ -26,6 +26,11 @@
         - [Listing Times](#listing-times)
         - [Making Appointment](#making-appointment)
         - [Listing Appointments](#listing-appointments)
+    - [Provider Functionalities](#provider-functionalities)
+        - [Adding Departments](#adding-departments)
+        - [Adding Doctors](#adding-doctors)
+        - [Adding Dates](#adding-dates)
+        - [Adding Times](#adding-times)
 - [Testing Process](#tests)
 
 
@@ -159,7 +164,25 @@ Users can list his active appointments.
 ```rust
 fn list_appointments(user_id: String) -> HashMap<Principal, Vec<AppointmentDetails>> 
 ```
-
 ## Provider Functionalities
-
+### Adding Departments
+Providers can add departments to themselves.
+```rust
+fn add_department(provider_id: String, department_name: String) -> Result<(), String> 
+```
+### Adding Doctors
+Providers can add doctors to their departments.
+```rust
+fn add_doctor(provider_id: String, department_name: String, doctor_name: String) -> Result<(), String>
+```
+### Adding Dates
+Providers can add appointment dates to their doctors.
+```rust
+fn add_date(provider_id: String, department_name: String, doctor_name: String, date: String) -> Result <(), String>
+```
+### Adding Times
+Providers can add appointment times to their appointment dates.
+```rust
+fn add_time(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
+```
 ## Admin Functionalities
