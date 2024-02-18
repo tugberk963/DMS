@@ -94,7 +94,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     ├── provider_utils.rs -> Medical Service Provider functions.
     └── user_utils.rs -> User functions
 ```
-## Authenticiation 
+## Authentication 
 ### Signup
 Users can signup to DMS with desired username and password.
 ```rust
