@@ -142,7 +142,7 @@ Users can make appointment. If provider has the available appointment according 
 fn make_appointment(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
 ```
 ### Listing Appointments
-Users can his active appointments.
+Users can list his active appointments.
 ```rust
 fn list_appointments(user_id: String) -> HashMap<Principal, Vec<AppointmentDetails>> 
 ```
