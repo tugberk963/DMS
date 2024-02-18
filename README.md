@@ -95,15 +95,18 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     └── user_utils.rs -> User functions
 ```
 ## Authenticiation 
-### Login
-```rust
-fn login(username: String, password: String) -> Result<(), String>
-```
 ### Signup
+Users can signup to DMS with desired username and password.
 ```rust
 fn sign_up(username: String, password: String) -> Result<(), String>
 ```
+### Login
+When users login with their username and password, if the credentials are correct. Login function adds their Principal ID to ACTIVE_SESSIONS.
+```rust
+fn login(username: String, password: String) -> Result<(), String>
+```
 ### Logout
+When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSIONS.
 ```rust
 fn logout()
 ```
