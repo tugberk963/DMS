@@ -32,6 +32,13 @@
         - [Adding Dates](#adding-dates)
         - [Adding Times](#adding-times)
         - [Listings](#listings)
+    - [Admin Functionalities](#admin-functionalities)
+        - [Listing Signed Users](#listing-signed-users)
+        - [Listing Active Sessions](#listing-active-sessions)
+        - [Controlling If User Is Logged In](#controlling-if-user-is-logged-in)
+        - [Setting Providers](#setting-providers)
+        - [Listing Providers](#listing-providers)
+        - [Removing Providers](#removing-providers)
 - [Testing Process](#tests)
 
 
@@ -189,3 +196,40 @@ fn add_time(provider_id: String, department_name: String, doctor_name: String, d
 ### Listings
 Providers have access to the same listing functions available to users.
 ## Admin Functionalities
+In the DMS, we require a decision-maker to determine who will become a provider. Therefore, we need an admin user who will fulfill this role. Security checks for this role will be improved. 
+        - [Listing Signed Users](#listing-signed-users)
+        - [Listing Active Sessions](#listing-active-sessions)
+        - [Controlling If User Is Logged In](#controlling-if-user-is-logged-in)
+        - [Setting Providers](#setting-providers)
+        - [Listing Providers](#listing-providers)
+        - [Removing Providers](#removing-providers)
+### Listings Signed Users
+Admins can list signed users.
+```rust
+fn list_signed_users() -> Vec<String>
+```
+### Listing Active Sessions
+Admins can list active sessions, logged in users.
+```rust
+fn list_active_sessions() -> Vec<String> 
+```
+### Controlling If User Is Logged In
+Admins can check and see if user is logged in.
+```rust
+fn is_logged_in(user_id: String) -> bool 
+```
+### Setting Providers
+Admins can set providers. When selected, user will be removed from the user list and added to the provider list.
+```rust
+fn set_provider(user_id: String) -> Result<(), String>
+```
+### Listing Providers
+Admins can list current providers on DMS.
+```rust
+fn list_providers() -> Vec<String> 
+```
+### Removing Providers
+Admins can remove a provider from providers lists.
+```rust
+fn remove_provider(user_id: String) -> Result<(), String> 
+```
