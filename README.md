@@ -83,6 +83,7 @@ npm start
 ```
 Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
 ## Project Tree
+```bash
 .
 ├── Cargo.toml
 ├── icp_internship_bootcamp_final_project_backend.did // Candid functions 
@@ -92,6 +93,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     ├── lib.rs ->  Type definitions.
     ├── provider_utils.rs -> Medical Service <b>Providers </b> functions.
     └── user_utils.rs -> User functions
+```
 ## Authenticiation 
 ### Login
 
