@@ -7,7 +7,7 @@ Welcome to your new final_project project and to the internet computer developme
 - [Setup](#setup)
   -  [Setting up IC CDK](#setting-up-ic-cdk)
   -  [Setting up Rust](#setting-up-rust)
-  -  [Starting Server](#starting_server)
+  -  [Starting Server](#starting-server)
   -  [Deploying Project](#deploying-project)
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
