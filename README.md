@@ -22,7 +22,7 @@ DMS: Medical Service Provider on <b><a href="https://internetcomputer.org/"> Int
 ## Project Team - Individual
 Tuğberk Serçe :D
 ## Project Description - Purpose 
-DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as back-end canisters. </i> </strong>
+DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as a back-end canister. </i> </strong>
 ## Project Vision
 The primary vision of the project is to establish DMS as the <b>  <i> central platform for healthcare service providers and patients worldwide. </i> </b>
 <br>Through the vast data flow integrated into DMS, we empower its AI capabilities, transforming it into an efficient and proactive predictive healthcare service provider. <br> This strategic approach aims to revolutionize healthcare delivery, offering advanced and personalized services to users globally.
