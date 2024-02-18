@@ -96,14 +96,20 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 ```
 ## Authenticiation 
 ### Login
-
-### Signup
-
-### Logout
-## User Functionalities
 ```rust
-
+fn login(username: String, password: String) -> Result<(), String>
 ```
+### Signup
+```rust
+fn sign_up(username: String, password: String) -> Result<(), String>
+```
+### Logout
+```rust
+fn logout()
+```
+## User Functionalities
+
+
 ## Provider Functionalities
 
 ## Admin Functionalities
