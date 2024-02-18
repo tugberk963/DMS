@@ -203,7 +203,7 @@ In the DMS, we require a decision-maker to determine who will become a provider.
         - [Setting Providers](#setting-providers)
         - [Listing Providers](#listing-providers)
         - [Removing Providers](#removing-providers)
-### Listings Signed Users
+### Listing Signed Users
 Admins can list signed users.
 ```rust
 fn list_signed_users() -> Vec<String>
