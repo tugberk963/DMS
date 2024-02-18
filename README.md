@@ -120,7 +120,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 ```
 ## Project Functionalities
 ## Authentication 
-### [x] Signup
+### &#9745; Signup
 Users can signup to DMS with desired username and password.
 ```rust
 fn sign_up(username: String, password: String) -> Result<(), String>
