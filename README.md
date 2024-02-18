@@ -120,80 +120,80 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 ```
 ## Project Functionalities
 ## Authentication 
-### [x]Signup
+### [x] Signup
 Users can signup to DMS with desired username and password.
 ```rust
 fn sign_up(username: String, password: String) -> Result<(), String>
 ```
-### [x]Login
+### [x] Login
 When users login with their username and password, if the credentials are correct. Login function adds their Principal ID to ACTIVE_SESSIONS.
 ```rust
 fn login(username: String, password: String) -> Result<(), String>
 ```
-### [x]Logout
+### [x] Logout
 When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSIONS.
 ```rust
 fn logout()
 ```
 ## User Functionalities
-### [x]Listing Providers
+### [x] Listing Providers
 Users can list active providers ( Hospitals,  health clinics.) on DMS. 
 ```rust
 fn list_providers() -> Vec<String>
 ```
-### [x]Listing Departments
+### [x] Listing Departments
 Users can list selected providers departments, for example Neurology.
 ```rust
 fn list_departments(provider_id: String) -> Vec<String>
 ```
-### [x]Listing Doctors
+### [x] Listing Doctors
 Users can list selected departments doctors.
 ```rust
 fn list_doctors(provider_id: String, department_name: String) -> Vec<String>
 ```
-### [x]Listing Dates
+### [x] Listing Dates
 Users can list available appointment dates for desired doctor.
 ```rust
 fn list_dates(provider_id: String, department_name: String, doctors_name: String) -> Vec<String>
 ```
-### [x]Listing Times
+### [x] Listing Times
 Users can list available appointment times for desired dates on selected doctor.
 ```rust
 fn list_times(provider_id: String, department_name: String, doctors_name: String, selected_date: String) -> Vec<String> 
 ```
-### [x]Making Appointment 
+### [x] Making Appointment 
 Users can make appointment. If provider has the available appointment according to users input. That appointment will be deleted from providers appointment list and will be added into users active appointments list.
 ```rust
 fn make_appointment(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
 ```
-### [x]Listing Appointments
+### [x] Listing Appointments
 Users can list his active appointments.
 ```rust
 fn list_appointments(user_id: String) -> HashMap<Principal, Vec<AppointmentDetails>> 
 ```
 ## Provider Functionalities
 In DMS, providers refer to any facility that is a health or medical service provider.
-### [x]Adding Departments
+### [x] Adding Departments
 Providers can add departments to themselves.
 ```rust
 fn add_department(provider_id: String, department_name: String) -> Result<(), String> 
 ```
-### [x]Adding Doctors
+### [x] Adding Doctors
 Providers can add doctors to their departments.
 ```rust
 fn add_doctor(provider_id: String, department_name: String, doctor_name: String) -> Result<(), String>
 ```
-### [x]Adding Dates
+### [x] Adding Dates
 Providers can add appointment dates to their doctors.
 ```rust
 fn add_date(provider_id: String, department_name: String, doctor_name: String, date: String) -> Result <(), String>
 ```
-### [x]Adding Times
+### [x] Adding Times
 Providers can add appointment times to their appointment dates.
 ```rust
 fn add_time(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
 ```
-### [x]Listings
+### [x] Listings
 Providers have access to the same listing functions available to users.
 ## Admin Functionalities
 In the DMS, we require a decision-maker to determine who will become a provider. Therefore, we need an admin user who will fulfill this role. Security checks for this role will be improved. 
@@ -202,27 +202,27 @@ Admins can list signed users.
 ```rust
 fn list_signed_users() -> Vec<String>
 ```
-### [x]Listing Active Sessions
+### [x] Listing Active Sessions
 Admins can list active sessions, logged in users.
 ```rust
 fn list_active_sessions() -> Vec<String> 
 ```
-### [x]Controlling If User Is Logged In
+### [x] Controlling If User Is Logged In
 Admins can check and see if user is logged in.
 ```rust
 fn is_logged_in(user_id: String) -> bool 
 ```
-### [x]Setting Providers
+### [x] Setting Providers
 Admins can set providers. When selected, user will be removed from the user list and added to the provider list.
 ```rust
 fn set_provider(user_id: String) -> Result<(), String>
 ```
-### [x]Listing Providers
+### [x] Listing Providers
 Admins can list current providers on DMS.
 ```rust
 fn list_providers() -> Vec<String> 
 ```
-### [x]Removing Providers
+### [x] Removing Providers
 Admins can remove a provider from providers lists.
 ```rust
 fn remove_provider(user_id: String) -> Result<(), String> 
