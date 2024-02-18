@@ -4,7 +4,7 @@
 
 ## Content 
 
-- [Project Purpose](#project-purpose)
+- [Project Description - Purpose](#project-description-purpose)
 - [Project Features](#project-description)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
@@ -15,30 +15,29 @@
 - [Project Functionalities](#functions)
 - [Testing Process](#tests)
 
-## Project Purpose
-DMS aims to bring together healthcare service providers (hospitals, health clinics, etc.) and patients, facilitating processes such as appointment scheduling and secure storage of medical records.
-In this final project, project's main functionalities builded on Rust as back-end canisters.
-
+## Project Description - Purpose 
+DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. For final project, main functionalities of DMS built on Rust as back-end canisters.
 ## Project Vision
-### Single Interface for Patients and Healthcare Providers:
-  DMS aiming to provide a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface which stands on Internet Computer.
-### Appointment Scheduling System:
-  Patients can schedule appointments with suitable doctors or departments through DMS.
-The appointment calendar displays the availability of doctors and allows patients to book appointments at their preferred times.
-### Medical Record Security:
-  Patients' medical records are securely stored on the Internet Computer.
-  Data is protected with end-to-end encryption and robust security protocols.
-  Access is restricted to authorized users only.
-### Utilization of Data for Predictive Healthcare Services:
-The data collected within DMS can be leveraged to train machine learning models for predictive healthcare services.
-These machine learning models can analyze patterns and trends within the data to make predictions related to patients' health outcomes, potential diseases, or treatment effectiveness.
-### Enhanced Healthcare Services through AI:
-By utilizing AI-driven predictive models, DMS can enhance healthcare services by providing proactive and personalized care to patients.
-For example, the AI model can identify individuals at higher risk for certain health conditions and recommend preventive measures or early interventions to mitigate those risks.
-### Improving Healthcare Accessibility and Efficiency:
-AI-driven predictive models can also help in optimizing resource allocation and improving healthcare service efficiency.
-By predicting patient needs and allocating resources accordingly, healthcare providers can streamline their operations and ensure better accessibility to healthcare services for all patients.
+Main Functionalities:
 
+Single Interface for Patients and Healthcare Providers:
+
+DMS provides a unified platform where both patients and healthcare providers can access and manage all medical service operations. Patients can schedule appointments, search for doctors, and view medical records, while healthcare providers can handle tasks such as doctor assignment, appointment tracking, and updating medical records, all through a single interface standing on Internet Computer.
+Medical Record Security:
+
+Patients' medical records are securely stored on the Internet Computer platform. Data is protected with end-to-end encryption and robust security protocols, ensuring that access is restricted to authorized users only.
+Utilization of Data for Predictive Healthcare Services:
+
+DMS collects and leverages data to train machine learning models for predictive healthcare services. These models analyze patterns and trends within the data to make predictions related to patients' health outcomes, potential diseases, or treatment effectiveness.
+Grant System for Data Sharing:
+
+DMS implements a grant system where individuals providing health data are rewarded with grants. Hospitals, as the institutions approving this data, receive grants based on the number of patients they approve. These grants contribute to financing the privileged healthcare services offered to DMS users.
+Enhanced Healthcare Services through AI:
+
+By utilizing AI-driven predictive models, DMS enhances healthcare services by providing proactive and personalized care to patients. For example, the AI model can identify individuals at higher risk for certain health conditions and recommend preventive measures or early interventions to mitigate those risks.
+Improving Healthcare Accessibility and Efficiency:
+
+AI-driven predictive models optimize resource allocation and improve healthcare service efficiency within DMS. By predicting patient needs and allocating resources accordingly, healthcare providers streamline their operations and ensure better accessibility to healthcare services for all patients.
 ## Project 
 
 
