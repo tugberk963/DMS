@@ -111,8 +111,11 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 fn logout()
 ```
 ## User Functionalities
-
-
+### Listing Providers
+Users can list active providers ( Hospitals,  health clinics.) on DMS. 
+```rust
+fn list_providers() -> Vec<String>
+```
 ## Provider Functionalities
 
 ## Admin Functionalities
