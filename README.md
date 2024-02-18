@@ -195,12 +195,6 @@ fn add_time(provider_id: String, department_name: String, doctor_name: String, d
 Providers have access to the same listing functions available to users.
 ## Admin Functionalities
 In the DMS, we require a decision-maker to determine who will become a provider. Therefore, we need an admin user who will fulfill this role. Security checks for this role will be improved. 
-        - [Listing Signed Users](#listing-signed-users)
-        - [Listing Active Sessions](#listing-active-sessions)
-        - [Controlling If User Is Logged In](#controlling-if-user-is-logged-in)
-        - [Setting Providers](#setting-providers)
-        - [Listing Providers](#listing-providers)
-        - [Removing Providers](#removing-providers)
 ### Listing Signed Users
 Admins can list signed users.
 ```rust
