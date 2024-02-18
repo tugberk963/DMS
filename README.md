@@ -31,6 +31,7 @@
         - [Adding Doctors](#adding-doctors)
         - [Adding Dates](#adding-dates)
         - [Adding Times](#adding-times)
+        - [Listings](#listings)
 - [Testing Process](#tests)
 
 
@@ -185,4 +186,6 @@ Providers can add appointment times to their appointment dates.
 ```rust
 fn add_time(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
 ```
+### Listings
+Providers have access to the same listing functions available to users.
 ## Admin Functionalities
