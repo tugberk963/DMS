@@ -126,6 +126,16 @@ Users can list selected departments doctors.
 ```rust
 fn list_doctors(provider_id: String, department_name: String) -> Vec<String>
 ```
+### Listing Dates
+Users can list available appointment dates for desired doctor.
+```rust
+fn list_dates(provider_id: String, department_name: String, doctors_name: String) -> Vec<String>
+```
+### Listing Dates
+Users can list available appointment times for desired dates on selected doctor.
+```rust
+fn list_times(provider_id: String, department_name: String, doctors_name: String, selected_date: String) -> Vec<String> 
+```
 ## Provider Functionalities
 
 ## Admin Functionalities
