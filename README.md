@@ -44,7 +44,7 @@
 DMS: Medical Service Provider on <b><a href="https://internetcomputer.org/"> Internet Computer </a></b>.
 <br> <br> <b> <i> DMS stands for Decentralized Medical Services. </b> </i> 
 ## Project Team - Individual
-Tuğberk Serçe :D
+I'm Tuğberk Serçe, a 22-year-old Senior Physics Student at Yildiz Technical University. My journey with software began during my high school years and has since evolved into a serious pursuit. I'm currently privileged to serve as a Full Stack Developer Intern at one of a kind IoT company. Specializing in Angular, Typescript, and Python, I'm proficient in various frontend frameworks and multiple programming languages. My fascination with low-level languages fuels my dedication to mastering these skills, propelling me to make meaningful contributions to the world of software development.
 ## Project Description - Purpose 
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <i> For final project, some of main functionalities of DMS built on Rust as a back-end canister. </i> </strong>
 ## Project Vision
