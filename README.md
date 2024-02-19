@@ -110,7 +110,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 ```bash
 .
 ├── Cargo.toml
-├── icp_internship_bootcamp_final_project_backend.did // Candid functions 
+├── icp_internship_bootcamp_final_project_backend.did // Candid 
 └── src
     ├── administration.rs -> Super User functions | a.k.a. admin.
     ├── auth.rs -> Login - Signup - Logout functions.
