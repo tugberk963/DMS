@@ -230,4 +230,4 @@ Admins can remove a provider from providers lists.
 fn remove_provider(user_id: String) -> Result<(), String> 
 ```
 ### &#9745; Admin Test
-<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif"> <br> </br>
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/admin-test.gif"> <br> </br>
