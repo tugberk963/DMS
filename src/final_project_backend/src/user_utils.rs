@@ -74,19 +74,26 @@ fn make_appointment(provider_id: String, department_name: String, doctor_name: S
 }
 
 #[query]
-fn list_appointments(user_id: String) -> <HashMap<Principal, Vec<String>> {
+fn list_appointments(user_id: String) -> Vec<String> {
     USERS.with(|users| {
         let users = users.borrow();
-
-        // Extracting Principal from the Result
-        let principal_result = Principal::from_text(&user_id);
-        if let Ok(principal) = principal_result {
-            if let Some(user) = users.get(&principal) {
-                // Accessing appointments of the user
-                return Some(user.appointments.clone());
+        if let Some(user) = users.get(&Principal::from_text(&user_id).expect("Not found user")) {
+            let mut appointments = Vec::new();
+            for (provider_id, appointment_details) in user.appointments.iter() {
+                // Her bir randevu için gerekli bilgileri alıp bir String'e dönüştürelim
+                for details in appointment_details {
+                    let detail_str = format!("Provider ID: {}, Department: {}, Doctor: {}, Date: {}, Time: {}",
+                                             provider_id,
+                                             details.department,
+                                             details.doctor,
+                                             details.date,
+                                             details.time);
+                    appointments.push(detail_str);
+                }
             }
+            appointments // Randevuları içeren String vektörünü döndürelim
+        } else {
+            Vec::new() // Kullanıcı bulunamazsa boş bir vektör döndürelim
         }
-        
-        None // Return None if user not found or error in Principal extraction
     })
 }

@@ -34,8 +34,8 @@ fn set_provider(user_id: String) -> Result<(), String> {
     // } 
     // 
     let provider_credentials = Provider {
-        provider_name: "Test".to_string(),
-        provider_pass: "Test".to_string(),
+        provider_name: "Provider 1".to_string(),
+        provider_pass: "provider pass".to_string(),
         departments: HashMap::new()
     };
 
