@@ -136,7 +136,7 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 fn logout()
 ```
 ### &#9746; Auth Test
-<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif">
+<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif"/>
 ## User Functionalities
 ### &#9745; Listing Providers
 Users can list active providers ( Hospitals,  health clinics.) on DMS. 
