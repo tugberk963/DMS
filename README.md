@@ -37,7 +37,7 @@
     - [Setting Providers](#setting-providers)
     - [Listing Providers](#listing-providers)
     - [Removing Providers](#removing-providers)
-- [Testing Process](#testing-process)
+- [Further Moves](#further-moves)
 
 
 ## Project Name
@@ -231,3 +231,15 @@ fn remove_provider(user_id: String) -> Result<(), String>
 ```
 ### &#9745; Admin Test
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/admin-test.gif"> <br> </br>
+## Further Moves
+Projects development will continue until hackathon process. To-Do list of improvement ideas until hackathon date are below:
+### &#9745; Front-end will be developed on Svelte
+### &#9745; Users can view their health data on system
+### &#9745; Users can view their result data on system
+### &#9745; Users can view their drug use history data on system
+### &#9745; Providers can update & view patients health data on system
+### &#9745; Providers can update & view result data on system
+### &#9745; Providers can update & view drug use history data on system
+### &#9745; More security checks should be added to Admin & Provider user.
+### &#9745; Providers should be accessible with their name.
+### &#9745; Providers may have sub modules, for their doctors etc. So doctors do data management & update with seperate accounts which is linked to that provider. This may require an account linking system.
