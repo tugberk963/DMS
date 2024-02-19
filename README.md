@@ -135,6 +135,8 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 ```rust
 fn logout()
 ```
+### &#9745; Auth Test
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif"> <br> </br>
 ## User Functionalities
 ### &#9745; Listing Providers
 Users can list active providers ( Hospitals,  health clinics.) on DMS. 
@@ -227,3 +229,5 @@ Admins can remove a provider from providers lists.
 ```rust
 fn remove_provider(user_id: String) -> Result<(), String> 
 ```
+### &#9745; Admin Test
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/admin-test.gif"> <br> </br>
