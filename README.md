@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Project Name](#project-name)
-- [Project Team](#project-team-individual)
+- [Project Team](#project-team---individual)
 - [Project Description](#project-description---purpose)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
