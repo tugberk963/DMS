@@ -46,4 +46,6 @@ service : {
   add_doctor : (provider_id: text, department_name: text, doctor_name: text) -> (variant {Ok: null; Err: text});
   add_date : (provider_id: text, department_name: text, doctor_name: text, date: text) -> (variant {Ok: null; Err: text});
   add_time : (provider_id: text, department_name: text, doctor_name: text, date: text, time: text) -> (variant {Ok: null; Err: text});
+
+  say_hi : (user_name: text) -> (text);
 };

@@ -6,6 +6,7 @@ mod user_utils;
 use candid::{Principal, CandidType};
 use std::collections::HashMap;
 use std::cell::RefCell;
+use ic_cdk::update;
 
 // Active Sessions contains logged in principal ids.
 type ActiveSessions = Vec<Session>;
@@ -66,6 +67,10 @@ struct Provider { // a.k.a. Hospitals - Medical Service PROVIDERS
     pub departments: Departments, // Department's Name, Department's Doctors
 }
 
+#[update]
+fn say_hi(user_name: String){
+    format!("Hi  {}", &user_name);
+}
 /* In later will be added. - Personal Data Edit should be added too with this.
 struct PersonalData {
     pub name: String,
