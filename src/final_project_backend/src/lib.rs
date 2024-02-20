@@ -11,7 +11,7 @@ use std::cell::RefCell;
 type ActiveSessions = Vec<Session>;
 // User Types
 type Users = HashMap<Principal, User>;
-type Appointments = HashMap<Principal, Vec<AppointmentDetails>>;
+type Appointments = HashMap<Principal, Vec<AppointmentDetails>>; // This principal stands for providers principal ID
 // Admins ??
 type Providers = HashMap<Principal, Provider>;
 
@@ -38,6 +38,17 @@ struct User {
     pub username: String,
     pub password: String,
     pub appointments: Appointments,
+    pub health_data: HealthData,
+    //pub personal_data: PersonalData,
+}
+
+#[derive(Clone, Debug)]
+struct HealthData {
+    pub age: u8,
+    pub height: u8,
+    pub weight: u8,
+    pub allergies: Vec<String>,
+    pub diseases: Vec<String>,
 }
 
 #[derive(Clone, Debug, CandidType)]
@@ -51,17 +62,14 @@ struct AppointmentDetails {
 #[derive(Clone, Debug)]
 struct Provider { // a.k.a. Hospitals - Medical Service PROVIDERS
     pub provider_name: String,
-    pub provider_pass: String,
+    pub provider_pass: String, // <--< This can be removed 
     pub departments: Departments, // Department's Name, Department's Doctors
-    // pub departments: HashMap<String, Doctors>,
 }
 
-// #[derive(Clone, Debug)]
-// struct Doctors {
-//     doctors: HashMap<String, Dates> // Doctor's name, Doctor's Available Dates
-// }
-
-// #[derive(Clone, Debug)]
-// struct Dates {
-//     times: HashMap<String, Vec<String>> // Date and Available Hours on that day
-// }
+/* In later will be added. - Personal Data Edit should be added too with this.
+struct PersonalData {
+    pub name: String,
+    pub surname: String,
+    pub location: String,
+}
+*/

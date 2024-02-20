@@ -1,4 +1,4 @@
-use crate::{ACTIVE_SESSIONS, USERS, User, Session};
+use crate::{ACTIVE_SESSIONS, USERS, User, Session, HealthData};
 use ic_cdk::{update};
 use std::collections::HashMap;
 
@@ -22,7 +22,9 @@ fn sign_up(username: String, password: String) -> Result<(), String> {
     let new_user_credentials = User {
         username: username.to_string(),
         password: password.to_string(),
-        appointments: HashMap::new()
+        appointments: HashMap::new(),
+        health_data: HealthData { age: 22, height: 172, weight: 72, allergies: Vec::new(), diseases: Vec::new() 
+    }
     };
 
     USERS.with(|users| users.borrow_mut().insert(new_user_id, new_user_credentials));

@@ -12,30 +12,26 @@ fn make_appointment(provider_id: String, department_name: String, doctor_name: S
                 if let Some(doctor) = department.get_mut(&doctor_name){
                     if let Some(selected_date) = doctor.get_mut(&date){
                         if let Some(index) = selected_date.iter().position(|t| t == &time) {
-                            // Make the Appointment if the time slot is available
+                            // Remove appointment if date available.
                             selected_date.remove(index);
                             true
                         } else {
-                            false // Time slot not found
+                            false // Time slot not found.
                         }
                     }
                     else {
-                        // Err("No available date".to_string())
                         false
                     }
                 }
                 else {
-                    // Err("Doctor not found".to_string())
                     false
                 }
             }
             else {
-                // Err("Department not found".to_string())
                 false
             }
         }
         else{
-            // Err("Provider not found".to_string())
             false
         }
     });
@@ -74,13 +70,13 @@ fn make_appointment(provider_id: String, department_name: String, doctor_name: S
 }
 
 #[query]
-fn list_appointments(user_id: String) -> Vec<String> {
+fn list_appointments(user_id: String) -> Vec<Vec<String>> {
     USERS.with(|users| {
         let users = users.borrow();
         if let Some(user) = users.get(&Principal::from_text(&user_id).expect("Not found user")) {
             let mut appointments = Vec::new();
             for (provider_id, appointment_details) in user.appointments.iter() {
-                // Her bir randevu için gerekli bilgileri alıp bir String'e dönüştürelim
+                let mut appointment_info = Vec::new();
                 for details in appointment_details {
                     let detail_str = format!("Provider ID: {}, Department: {}, Doctor: {}, Date: {}, Time: {}",
                                              provider_id,
@@ -88,12 +84,15 @@ fn list_appointments(user_id: String) -> Vec<String> {
                                              details.doctor,
                                              details.date,
                                              details.time);
-                    appointments.push(detail_str);
+                    appointment_info.push(detail_str);
                 }
+                appointments.push(appointment_info);
             }
-            appointments // Randevuları içeren String vektörünü döndürelim
+            appointments // Return vector of vectors of strings
         } else {
-            Vec::new() // Kullanıcı bulunamazsa boş bir vektör döndürelim
+            Vec::new() // Return an empty vector if the user is not found
         }
     })
 }
+
+

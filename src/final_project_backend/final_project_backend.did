@@ -32,7 +32,7 @@ service : {
 
   // user functions
   make_appointment: (text, text, text, text, text) -> (variant {Ok: null; Err: text});
-  list_appointments : (text) -> (vec text);
+  list_appointments : (text) -> (vec vec text);
 
   // provider functions
   // listing
