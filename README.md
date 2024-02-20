@@ -2,8 +2,8 @@
 
 ## Table of Contents
 - [Project Name](#project-name)
-- [Project Team](#project-team)
-- [Project Description](#project-description-purpose)
+- [Project Team](#project-team-individual)
+- [Project Description](#project-description---purpose)
 - [Project Vision](#project-vision)
 - [Project Setup](#project-setup)
   - [Setting up IC CDK](#setting-up-ic-cdk)
