@@ -1,19 +1,38 @@
 type Principal = blob;
 
-type User = record {
-  username: text;
-  password: text;
-};
-
-type Session = record {
-  user_id: text;
-};
 
 type AppointmentDetails = record {
   department : text;
   doctor: text;
   date: text;
   time: text;
+};
+type Appointments = record {Principal; vec AppointmentDetails};
+type HealthData = record {
+    height: nat8;
+    weight: nat8;
+    allergies: vec text;
+    diseases: vec text;
+};
+
+type PersonalData = record {
+    name: text;
+    surname: text;
+    age: nat8;
+    location: text;
+};
+
+type User = record {
+  identity: text;
+  username: text;
+  password: text;
+  appointments: Appointments;
+  health_data: HealthData;
+  personal_data: PersonalData;
+};
+
+type Session = record {
+  user_id: text;
 };
 
 service : {
@@ -47,5 +66,5 @@ service : {
   add_date : (provider_id: text, department_name: text, doctor_name: text, date: text) -> (variant {Ok: null; Err: text});
   add_time : (provider_id: text, department_name: text, doctor_name: text, date: text, time: text) -> (variant {Ok: null; Err: text});
 
-  say_hi : (user_name: text) -> (text);
+  get_current_user : () -> (opt text);
 };

@@ -6,7 +6,8 @@ mod user_utils;
 use candid::{Principal, CandidType};
 use std::collections::HashMap;
 use std::cell::RefCell;
-use ic_cdk::update;
+
+use serde::Serialize;
 
 // Active Sessions contains logged in principal ids.
 type ActiveSessions = Vec<Session>;
@@ -28,31 +29,39 @@ thread_local! {
 }
 
 // Session Struct
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, CandidType, Serialize)]
 struct Session {
     pub user_id: Principal, // Check here
 }
 
+#[derive(Clone, Debug, CandidType, Serialize)]
+struct PersonalData {
+    pub name: String,
+    pub surname: String,
+    pub age: u8,
+    pub location: String,
+}
+
 // User Struct
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, CandidType, Serialize)]
 struct User {
+    pub identity: String,
     pub username: String,
     pub password: String,
     pub appointments: Appointments,
     pub health_data: HealthData,
-    //pub personal_data: PersonalData,
+    pub personal_data: PersonalData,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, CandidType, Serialize)]
 struct HealthData {
-    pub age: u8,
     pub height: u8,
     pub weight: u8,
     pub allergies: Vec<String>,
     pub diseases: Vec<String>,
 }
 
-#[derive(Clone, Debug, CandidType)]
+#[derive(Clone, Debug, CandidType, Serialize)]
 struct AppointmentDetails {
     pub department: String,
     pub doctor: String,
@@ -60,21 +69,11 @@ struct AppointmentDetails {
     pub time: String,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
 struct Provider { // a.k.a. Hospitals - Medical Service PROVIDERS
     pub provider_name: String,
     pub provider_pass: String, // <--< This can be removed 
     pub departments: Departments, // Department's Name, Department's Doctors
 }
 
-#[update]
-fn say_hi(user_name: String){
-    format!("Hi  {}", &user_name);
-}
-/* In later will be added. - Personal Data Edit should be added too with this.
-struct PersonalData {
-    pub name: String,
-    pub surname: String,
-    pub location: String,
-}
-*/
+

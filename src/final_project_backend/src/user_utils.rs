@@ -2,6 +2,7 @@ use crate::{USERS, PROVIDERS, AppointmentDetails, User};
 use ic_cdk::{query, update};
 use candid::Principal;
 use std::collections::HashMap;
+use serde_json;
 
 #[update]
 fn make_appointment(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>{
@@ -95,4 +96,23 @@ fn list_appointments(user_id: String) -> Vec<Vec<String>> {
     })
 }
 
-
+#[query]
+fn get_current_user() -> Option<String> {
+    USERS.with(|users| {
+        let users = users.borrow();
+        if let Some(user) = users.get(&ic_cdk::caller()) {
+            // Convert user data to JSON object
+            let user_json = serde_json::json!({
+                "identity": user.identity,
+                "username": user.username,
+                "password": user.password,
+                "appointments": user.appointments,
+                "health_data": user.health_data,
+                "personal_data": user.personal_data,
+            });
+            Some(user_json.to_string())
+        } else {
+            None
+        }
+    })
+}
