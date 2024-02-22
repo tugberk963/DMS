@@ -8,6 +8,13 @@ fn is_logged_in(user_id: String) -> bool {
     ACTIVE_SESSIONS.with(|sessions| sessions.borrow().iter().any(|session| session.user_id.to_string() == user_id))
 }
 
+#[query]
+fn is_provider() -> bool {
+    PROVIDERS.with(|providers| {
+        providers.borrow().contains_key(&ic_cdk::caller())
+    })
+}
+
 // Listing signed users
 #[query]
 fn list_signed_users() -> Vec<String> {

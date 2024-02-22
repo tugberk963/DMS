@@ -47,6 +47,7 @@ service : {
   list_signed_users: () -> (vec text);
   set_provider: (text) -> (variant {Ok: null; Err: text});
   list_providers: () -> (vec text);
+  is_provider: () -> (bool);
   remove_provider: (text) -> (variant {Ok: null; Err: text});
 
   // user functions

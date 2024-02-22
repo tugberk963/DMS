@@ -9,6 +9,16 @@
         window.location.href = "/";
     }
 
+    let isProvider;
+    async function user_is_provider() {
+        try {
+            isProvider = await backend.is_provider();
+            console.log(userData);
+        } catch (error) {
+            console.error("Error while checking user is provider: ", error);
+        }
+    }
+
     let userData = {};
     async function get_user_data() {
         try {
@@ -21,11 +31,14 @@
         }
     }
 
-    onMount(get_user_data);
+    onMount(() => {
+        user_is_provider();
+        get_user_data();
+    });
 </script>
 
 <main>
-    <button on:click={get_user_data}>Click to get user data</button>
+    <p>{isProvider}</p>
     <navbar> 
         <div class="logo">
             <img src="../logo2.svg" alt="logo">
@@ -54,17 +67,37 @@
             </div>
         </div>
         <div class="detailedContainer">
+            <div class="makeAppointment">
+                <h5>Make an appointment </h5>
+                <p>You don't have any active appointments.</p>
+                <p>Take an appointment date !</p>
+                <button>Make Appointment</button>
+            </div>
             <div class="shareSection">
-                <p>Share your health data</p>
+                <h5>Share your health data</h5>
+                <p>You can share your health data with the ones only you want.</p>
+                <button>Share</button>
             </div>
             <div class="predictor">
-                <p>What diseases you have?</p>
-            </div>
-            <div class="makeAppointment">
-                <p>Make an appointment </p>
+                <h5>What may you have?</h5>
+                <p>Take a quick survey and share your test results, let DMS AI decide for you !</p>
+                <button>Start</button>
             </div>
             <div class="nearProviders">
-                <p>Near Providers</p>
+                <div class="nearHospitals">
+                    <h5>Closest DMS Providers</h5>
+                    <p>
+                        See nearest DMS Providers. Hospitals, health clinics etc.
+                    </p>
+                    <img src="../hospital.png" alt="">
+                </div>
+                <div class="nearPharmacy">
+                    <h5>Closest DMS Pharmacy</h5>
+                    <p>
+                        See nearest DMS Providers. Hospitals, health clinics etc.
+                    </p>
+                    <img src="../pharmacy.png" alt="">
+                </div>
             </div>
         </div>
         <div class="lastVisits">
@@ -187,7 +220,7 @@
         margin-right: 20px;
     }
 
-    .shareSection, .predictor, .makeAppointment, .nearProviders {
+    .shareSection, .predictor, .makeAppointment{
         background-color: #fff;
         border-radius: 10px;
         padding: 20px;
@@ -198,6 +231,21 @@
     .shareSection p, .predictor p, .makeAppointment p, .nearProviders p {
         font-size: 18px;
         color: #333;
+    }
+
+    .nearProviders{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nearHospitals, .nearPharmacy{
+        flex: 1;
+        margin-right: 7px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .personalInformation {
