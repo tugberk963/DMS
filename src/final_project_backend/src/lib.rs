@@ -69,10 +69,10 @@ struct AppointmentDetails {
     pub time: String,
 }
 
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Serialize, CandidType)]
 struct Provider { // a.k.a. Hospitals - Medical Service PROVIDERS
     pub provider_name: String,
-    pub provider_pass: String, // <--< This can be removed 
+    pub provider_location: String, // <--< This can be removed 
     pub departments: Departments, // Department's Name, Department's Doctors
 }
 

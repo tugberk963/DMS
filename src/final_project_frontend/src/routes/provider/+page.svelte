@@ -1,5 +1,18 @@
 <script>
     import { backend } from "$lib/canisters";
+    import { onMount } from "svelte";
+
+
+
+    let department_name = '';
+    let doctor_name = '';
+    let selected_date = '';
+    let selected_time = '';
+
+    let departments = [];
+    let doctors = [];
+    let dates = [];
+    let times = [];
 
     let userData = {};
     async function get_user_data() {
@@ -13,15 +26,18 @@
         }
     }
 
-    let department_name = '';
-    let doctor_name = '';
-    let selected_date = '';
-    let selected_time = '';
+    let providerData = {};
+    async function getProviderData() {
+        try {
+            const providerDataString = await backend.get_provider_info(userData.identity);
+            providerData = JSON.parse(providerDataString[0]); // Parse JSON string to object
+            console.log(providerData);
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+            alert("User data couldn't be fetched.");
+        }
+    }
 
-    let departments = [];
-    let doctors = [];
-    let dates = [];
-    let times = [];
 
     async function getDepartments() {
         try {
@@ -92,10 +108,31 @@
     }
 
 
+
+    async function editProviderInfo(){
+        try {
+            console.log(await backend.edit_provider_info(userData.identity, provider_name, provider_location));
+        }
+        catch(error){
+            console.error("Changing Provider Info failed", error);
+        }
+    }
+
+    onMount(async () => {
+        await get_user_data();
+        await getProviderData();
+    });
 </script>
 
 <main>
     <div class="container">
+        <div class="editProfiderInfo">
+            <h2>Enter Provider Name: </h2>
+            <input type="text" bind:value={providerData.provider_name}>
+            <h2>Enter Provider Location</h2>
+            <input type="text" bind:value={providerData.provider_location}>
+            <button on:click={editProviderInfo}>Change Provider Info</button>
+        </div>
         <div class="section">
             <h2>Departments</h2>
             <button on:click={getDepartments}>List Departments</button>

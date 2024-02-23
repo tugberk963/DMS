@@ -56,10 +56,27 @@
         </div>
         <div class="detailedContainer">
             <div class="makeAppointment">
-                <h5>Make an appointment </h5>
-                <p>You don't have any active appointments.</p>
-                <p>Take an appointment date !</p>
-                <button on:click={sendAppointmentPage}>Make Appointment</button>
+                {#if userData.appointments && Object.keys(userData.appointments).length > 0}
+                    <h5>Current Appointments</h5>
+                    {#each Object.entries(userData.appointments) as [key, value]}
+                        <div class="appointmentCard">
+                            <h3>Provider ID: {key}</h3>
+                            {#each value as appointment}
+                                <div>
+                                    <p>Department: {appointment.department}</p>
+                                    <p>Doctor: {appointment.doctor}</p>
+                                    <p>Date: {appointment.date}</p>
+                                    <p>Time: {appointment.time}</p>
+                                </div>
+                            {/each}
+                        </div>
+                    {/each}
+                {:else}
+                    <h5>No appointments</h5>
+                    <p>You don't have any active appointments.</p>
+                    <p>Take an appointment date!</p>
+                    <button on:click={sendAppointmentPage}>Make Appointment</button>
+                {/if}
             </div>
             <div class="shareSection">
                 <h5>Share your health data</h5>
@@ -180,12 +197,21 @@
         margin-right: 20px;
     }
 
-    .shareSection, .predictor, .makeAppointment{
-        background-color: #fff;
+    .shareSection, .predictor, .makeAppointment, .appointmentCard {
+        background-color: #f9f9f9;
         border-radius: 10px;
         padding: 20px;
         margin-bottom: 20px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .appointmentCard {
+        width: 200px; /* Adjust the width as needed */
+        margin-right: 20px; /* Add some space between appointment cards */
+    }
+
+    .appointmentCard:nth-child(odd) {
+        background-color: #eaeaea;
     }
 
     .shareSection p, .predictor p, .makeAppointment p, .nearProviders p {

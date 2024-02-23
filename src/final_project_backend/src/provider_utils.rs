@@ -1,4 +1,4 @@
-use crate::PROVIDERS;
+use crate::{PROVIDERS, Provider};
 use ic_cdk::{query, update};
 use candid::Principal;
 use std::collections::HashMap;
@@ -169,16 +169,35 @@ fn add_time(provider_id: String, department_name: String, doctor_name: String, d
     })
 }
 
+#[query]
+fn get_provider_info(provider_id: String) -> Option<String> {
+    PROVIDERS.with(|providers| {
+        let providers = providers.borrow();
+        if let Some(provider) = providers.get(&Principal::from_text(&provider_id).expect("Provider not found.")) {
+            // Converts provider data to JSON object
+            let provider_json = serde_json::json!({
+                "provider_name": provider.provider_name,
+                "provider_location": provider.provider_location,
+                "departments": provider.departments,
+            });
+            Some(provider_json.to_string())
+        } else {
+            None
+        }
+    })
+}
 
-
-
-// #[update]
-// fn add_departments(provider_id: String, department_name: String){
-
-// }
-
-
-// #[update]
-// fn remove_departments(provider_id: String, department_name: String){
-    
-// }
+#[update]
+fn edit_provider_info(provider_id: String, provider_name: String, provider_location: String) -> Result<(), String>{
+    PROVIDERS.with(|providers| {
+        let mut providers = providers.borrow_mut();
+        if let Some(provider_data) = providers.get_mut(&Principal::from_text(&provider_id).expect("Profider not found.")){
+            provider_data.provider_name = provider_name.clone();
+            provider_data.provider_location = provider_location.clone();
+            Ok(())
+        }
+        else{
+            return Err("Provider not found.".to_string())
+        }
+    })
+}

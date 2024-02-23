@@ -1,7 +1,6 @@
-use crate::{USERS, PROVIDERS, AppointmentDetails, User};
+use crate::{USERS, PROVIDERS, AppointmentDetails};
 use ic_cdk::{query, update};
 use candid::Principal;
-use std::collections::HashMap;
 use serde_json;
 
 #[update]
