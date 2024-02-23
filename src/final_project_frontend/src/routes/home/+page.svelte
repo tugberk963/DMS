@@ -2,7 +2,6 @@
     import "../../index.scss";
     import { onMount } from "svelte";
     import User from "./User.svelte";
-    import Provider from "./Provider.svelte";
     import { backend } from "$lib/canisters";
 
     let isProvider;
@@ -46,6 +45,10 @@
         }
     }
 
+    function goToProviderSettings(){
+        window.location.href = "/provider";
+    }
+
     onMount(async () => {
         await user_is_provider();
         await get_user_data();
@@ -58,16 +61,15 @@
             <img src="../logo2.svg" alt="logo">
         </div>
         <div class="settings">
-            <button>Settings</button>
+            {#if isProvider}
+            <button on:click={goToProviderSettings}>Provider Settings</button>
+            {/if}
             <button on:click={() => set_provider(userData.identity)}>Set Provider </button>
             <button on:click={() => remove_provider(userData.identity)}>Remove Provider</button>
+
         </div>
     </navbar>
-    {#if isProvider}
-        <Provider id={userData.identity}/>
-    {:else}
-        <User/>
-    {/if}
+    <User/>
 </main>
 
 <style>
