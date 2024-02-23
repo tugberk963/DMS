@@ -64,7 +64,7 @@
         </div>
     </navbar>
     {#if isProvider}
-        <Provider/>
+        <Provider id={userData.identity}/>
     {:else}
         <User/>
     {/if}
