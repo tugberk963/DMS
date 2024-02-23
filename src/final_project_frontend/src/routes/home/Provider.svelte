@@ -79,152 +79,129 @@
             console.error("Adding time failed.", error);
         }
     }
+
+
 </script>
 
 <main>
-        <div class="container">
-            <div class="section">
-                <h2>Departments</h2>
-                <button on:click={getDepartments}>List Departments</button>
+    <div class="container">
+        <div class="section">
+            <h2>Departments</h2>
+            <button on:click={getDepartments}>List Departments</button>
+            {#if departments}
+                {#each departments as department}
+                    <div class="department-option">{department}</div>
+                {/each}
+            {/if}
+            <input type="text" placeholder="Enter department name" bind:value={department_name}>
+            <button on:click={addDepartment}>Add Department</button>
+        </div>
+        <div class="section">
+            <h2>Doctors</h2>
+            <button on:click={getDoctors}>List Doctors</button>
+            <select name="department-name" id="department" bind:value={department_name}>
+                <option value="">Select Department</option>
                 {#if departments}
                     {#each departments as department}
-                        <div>{department}</div>
+                        <option value={department}>{department}</option>
                     {/each}
                 {/if}
-                <input type="text" placeholder="Enter department name" bind:value={department_name}>
-                <button on:click={addDepartment}>Add Department</button>
-            </div>
-            <div class="section">
-                <h2>Doctors</h2>
-                <button on:click={getDoctors}>List Doctors</button>
-                <select name="department-name" id="department" bind:value={department_name}>
-                    <option value="">Select Department</option>
-                    {#if departments}
-                        {#each departments as department}
-                            <option value={department}>{department}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input type="text" placeholder="Enter doctor name" bind:value={doctor_name}>
-                <button on:click={addDoctor}>Add Doctor</button>
+            </select>
+            <input type="text" placeholder="Enter doctor name" bind:value={doctor_name}>
+            <button on:click={addDoctor}>Add Doctor</button>
+            {#if doctors}
+                {#each doctors as doctor}
+                    <div class="doctor-option">{doctor}</div>
+                {/each}
+            {/if}
+        </div>
+        <div class="section">
+            <h2>Appointment Dates</h2>
+            <button on:click={getDates}>List Appointment Dates</button>
+            <select name="doctor-name" id="doctor" bind:value={doctor_name}>
+                <option value="">Select Doctor</option>
                 {#if doctors}
                     {#each doctors as doctor}
-                        <div>{doctor}</div>
+                        <option value={doctor}>{doctor}</option>
                     {/each}
                 {/if}
-            </div>
-            <div class="section">
-                <h2>Appointment Dates</h2>
-                <button on:click={getDates}>List Appointment Dates</button>
-                <select name="doctor-name" id="doctor" bind:value={doctor_name}>
-                    <option value="">Select Doctor</option>
-                    {#if doctors}
-                        {#each doctors as doctor}
-                            <option value={doctor}>{doctor}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input type="date" bind:value={selected_date}>
-                <button on:click={addDate}>Add Date</button>
+            </select>
+            <input type="date" bind:value={selected_date}>
+            <button on:click={addDate}>Add Date</button>
+            {#if dates}
+                {#each dates as date}
+                    <div class="date-option">{date}</div>
+                {/each}
+            {/if}
+        </div>
+        <div class="section">
+            <h2>Appointment Times</h2>
+            <button on:click={getTimes}>List Appointment Times</button>
+            <select name="selected-date" id="date" bind:value={selected_date}>
+                <option value="">Select Date</option>
                 {#if dates}
                     {#each dates as date}
-                        <div>{date}</div>
+                        <option value={date}>{date}</option>
                     {/each}
                 {/if}
-            </div>
-            <div class="section">
-                <h2>Appointment Times</h2>
-                <button on:click={getTimes}>List Appointment Times</button>
-                <select name="selected-date" id="date" bind:value={selected_date}>
-                    <option value="">Select Date</option>
-                    {#if dates}
-                        {#each dates as date}
-                            <option value={date}>{date}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input type="time" bind:value={selected_time}>
-                <button on:click={addTime}>Add Time</button>
-                {#if times}
-                    {#each times as time}
-                        <div>{time}</div>
-                    {/each}
-                {/if}
-            </div>
+            </select>
+            <input type="time" bind:value={selected_time}>
+            <button on:click={addTime}>Add Time</button>
+            {#if times}
+                {#each times as time}
+                    <div class="time-option">{time}</div>
+                {/each}
+            {/if}
         </div>
+    </div>
 </main>
 
 <style>
-    main {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
     .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-    .section {
-        background-color: #f9f9f9;
-        border-radius: 12px;
-        box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff;
-        padding: 20px;
-        width: calc(50% - 20px);
-    }
+.section {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+}
 
-    h2 {
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-        color: #333;
-    }
+h2 {
+    margin-bottom: 10px;
+}
 
-    button, input[type="text"], input[type="date"], input[type="time"], select {
-        margin-bottom: 15px;
-        padding: 10px;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        font-size: 1rem;
-        width: 100%;
-        background-color: #f9f9f9;
-        transition: all 0.3s ease;
-    }
+button {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
 
-    button:hover {
-        background-color: #f0f0f0;
-    }
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    input[type="text"]:focus, input[type="date"]:focus, input[type="time"]:focus, select:focus {
-        border-color: #333;
-    }
+.date-option,
+.time-option,
+.department-option,
+.doctor-option {
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
 
-    select {
-        appearance: none;
-        background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/></svg>');
-        background-repeat: no-repeat;
-        background-position: right 10px center;
-        padding-right: 30px;
-    }
-
-    select::-ms-expand {
-        display: none;
-    }
-
-    select option {
-        padding: 10px;
-    }
-
-    div {
-        color: #333;
-    }
 </style>

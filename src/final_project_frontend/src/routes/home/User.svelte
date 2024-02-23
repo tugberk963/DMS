@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import {backend} from "$lib/canisters";
-    function onLogout() {
+    import {backend} from "$lib/canisters";    function onLogout() {
         backend.logout();
         window.location.href = "/";
     }
@@ -16,6 +15,11 @@
             alert("User data couldn't be fetched.");
         }
     }
+
+    function sendAppointmentPage(){
+        window.location.href = "/appointment";
+    }
+
     onMount(() => {
         get_user_data();
     });
@@ -55,7 +59,7 @@
                 <h5>Make an appointment </h5>
                 <p>You don't have any active appointments.</p>
                 <p>Take an appointment date !</p>
-                <button>Make Appointment</button>
+                <button on:click={sendAppointmentPage}>Make Appointment</button>
             </div>
             <div class="shareSection">
                 <h5>Share your health data</h5>
