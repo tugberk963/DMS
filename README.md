@@ -299,8 +299,7 @@ Providers can add medications to patients' health data.
 ```rust
 fn add_medication(user_id: String, medication_name: String) -> Result<(), String>{
 ```
-
-### &#9745; Adding Medications
+### &#9745; Editing Provider Info
 Providers can edit their info.
 ```rust
 fn edit_provider_info(provider_id: String, provider_name: String, provider_location: String) -> Result<(), String>
