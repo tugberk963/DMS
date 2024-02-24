@@ -114,16 +114,53 @@ npm start
 ```
 Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
 ## Project Tree
+### Front-end - Svelte
+```bash
+├── src
+│   ├── app.d.ts
+│   ├── app.html
+│   ├── index.scss
+│   ├── lib
+│   │   └── canisters.js
+│   ├── routes
+│   │   ├── +layout.js
+│   │   ├── +page.svelte
+│   │   ├── allergies
+│   │   │   └── +page.svelte
+│   │   ├── appointment
+│   │   │   └── +page.svelte
+│   │   ├── diseases
+│   │   │   └── +page.svelte
+│   │   ├── home
+│   │   │   ├── +page.svelte
+│   │   │   └── User.svelte
+│   │   ├── manage_patients
+│   │   │   └── +page.svelte
+│   │   ├── medications
+│   │   │   └── +page.svelte
+│   │   ├── personal_data
+│   │   │   └── +page.svelte
+│   │   ├── provider
+│   │   │   └── +page.svelte
+│   │   ├── provider_management
+│   │   │   └── +page.svelte
+│   │   ├── provider_profile
+│   │   │   └── +page.svelte
+│   │   ├── search_patients
+│   │   │   └── +page.svelte
+│   │   └── visits
+│   │       └── +page.svelte
+```
+### Back-end - Rust
 ```bash
 .
 ├── Cargo.toml
-├── icp_internship_bootcamp_final_project_backend.did // Candid 
-└── src
-    ├── administration.rs -> Super User functions | a.k.a. admin.
-    ├── auth.rs -> Login - Signup - Logout functions.
-    ├── lib.rs ->  Type definitions.
-    ├── provider_utils.rs -> Medical Service Provider functions.
-    └── user_utils.rs -> User functions
+├── icp_internship_bootcamp_final_project_backend.did 
+    ├── administration.rs 
+    ├── auth.rs 
+    ├── lib.rs 
+    ├── provider_utils.rs 
+    └── user_utils.rs 
 ```
 ## Testing Process for Hackathon
 To begin testing the environment as demonstrated in the GIFs below, follow these steps:
