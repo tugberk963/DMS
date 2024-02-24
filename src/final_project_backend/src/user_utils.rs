@@ -117,24 +117,22 @@ fn get_current_user() -> Option<String> {
 }
 
 #[update]
-fn edit_user_personal_data(user_id: String, name: String, surname: String, location: String, age: String, height: String, weight: String) -> Result <(), String>
-{
-    USERS.with(|users| 
-    {
-       let mut users = users.borrow_mut();
-       
-       if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found.")){
-            let mut personal_data = user.personal_data.clone();
-            personal_data.name = name.clone();
-            personal_data.surname = surname.clone();
-            personal_data.location = location.clone();
-            personal_data.age = age.clone();
-            personal_data.height = height.clone();
-            personal_data.weight = weight.clone();
-            Ok(())
-       }
-       else {
-            Err("User not found, editing personal data failed".to_string())
-       }
+fn edit_user_personal_data(user_id: String, name: String, surname: String, location: String, age: String, height: String, weight: String) -> Result<(), String> {
+    USERS.with(|users| {
+        let mut users = users.borrow_mut();
+        if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found.")) {
+            let mut personal_data = &mut user.personal_data;
+
+            personal_data.name = name;
+            personal_data.surname = surname;
+            personal_data.location = location;
+            personal_data.age = age;
+            personal_data.height = height;
+            personal_data.weight = weight;
+            
+            Ok(()) 
+        } else {
+            Err("User not found, editing personal data failed.".to_string())
+        }
     })
 }

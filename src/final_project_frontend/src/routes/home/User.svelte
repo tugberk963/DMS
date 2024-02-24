@@ -6,6 +6,8 @@
         window.location.href = "/";
     }
     let userData = {};
+    let name, surname, location, age, height, weight = '';
+    
     async function get_user_data() {
         try {
             const userDataString = await backend.get_current_user();
@@ -24,14 +26,16 @@
 
     async function editPersonalData(){
         try {
+            console.log("Name: ", name);
+            console.log("User id", userData.identity);
             console.log(await backend.edit_user_personal_data(
                 userData.identity,
-                userData.personal_data.name,
-                userData.personal_data.surname,
-                userData.personal_data.location,
-                userData.personal_data.age,
-                userData.personal_data.height,
-                userData.personal_data.weight,
+                "tugberk",
+                surname,
+                location,
+                age,
+                height,
+                weight,
             ));
         }
         catch (error)
@@ -42,6 +46,7 @@
 
     onMount(async () => {
         await get_user_data();
+        console.log("Name: ",name);
     });
 </script>
 
@@ -75,20 +80,23 @@
             </div>
         </div>
         <div class="detailedContainer">
-            <!-- <div class="editPersonalInfo">
+            <div class="editPersonalInfo">
+                <form on:submit={editPersonalData} action="">
                 <h2>Enter your name: </h2>
-                <input type="text" bind:value={userData.personal_data.name}>
+                <input type="text" bind:value={name}>
                 <h2>Enter your surname: </h2>
-                <input type="text" bind:value={userData.personal_data.surname}>
+                <input type="text" bind:value={surname}>
                 <h2>Enter your location: </h2>
-                <input type="text" bind:value={userData.personal_data.location}>
+                <input type="text" bind:value={location}>
                 <h2>Enter your age: </h2>
-                <input type="text" bind:value={userData.personal_data.age}>
+                <input type="text" bind:value={age}>
                 <h2>Enter your height: </h2>
-                <input type="text" bind:value={userData.personal_data.height}>
+                <input type="text" bind:value={height}>
                 <h2>Enter your weight: </h2>
-                <input type="text" bind:value={userData.personal_data.weight}>
-            </div> -->
+                <input type="text" bind:value={weight}>
+                <button type="submit">Save</button>
+            </form>
+            </div> 
             <div class="makeAppointment">
                 {#if userData.appointments && Object.keys(userData.appointments).length > 0}
                     <h5>Current Appointments</h5>
