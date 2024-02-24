@@ -35,7 +35,7 @@
         <div class="sections">
             <div class="general">
                 <h2>General</h2>
-                <a href="/">DMS AI</a>
+                <a href="/home">Home</a>
                 <a href="/visits">Visits</a>
                 <a href="/diseases">Diseases</a>
                 <a href="/allergies">Allergies</a>
@@ -117,23 +117,51 @@
             </div>
             <div class="personalData">
                 {#if userData && userData.personal_data && userData.health_data}
-                <p class="dfinityID">Dfinity ID: {userData.identity}</p>
-                <p class="username">Username: {userData.username}</p>
-                <p class="name">Name: {userData.personal_data.name}</p>
-                <p class="surname">Surname: {userData.personal_data.surname}</p>
-                <p class="age">Age: {userData.personal_data.age}</p>
-                <p class="height">Height: {userData.personal_data.height}</p>
-                <p class="weight">Weight: {userData.personal_data.weight}</p>
-                <p class="location">Location: {userData.personal_data.location}</p>
+                    <p class="dfinityID">Dfinity ID: {userData.identity}</p>
+                    <p class="username">Username: {userData.username}</p>
+                    {#if userData.personal_data.name == '' ||
+                         userData.personal_data.surname == ''||
+                         userData.personal_data.height == '' ||
+                         userData.personal_data.weight == ''||
+                         userData.personal_data.age == ''||
+                         userData.personal_data.location == ''}
+                    <p>Please add your personal data.</p>
+                    {/if}
+                    {#if userData.personal_data.name}
+                    <p class="name">Name: {userData.personal_data.name}</p>
+                    {/if}
+                    {#if userData.personal_data.surname}
+                    <p class="surname">
+                        Surname: {userData.personal_data.surname}
+                    </p>
+                    {/if}
+                    {#if userData.personal_data.name}
+                    <p class="age">Age: {userData.personal_data.age}</p>
+                    {/if}
+                    {#if userData.personal_data.height}
+                    <p class="height">
+                        Height: {userData.personal_data.height}
+                    </p>
+                    {/if}
+                    {#if userData.personal_data.weight}
+                    <p class="weight">
+                        Weight: {userData.personal_data.weight}
+                    </p>
+                    {/if}
+                    {#if userData.personal_data.location}
+                    <p class="location">
+                        Location: {userData.personal_data.location}
+                    </p>
+                    {/if}
                 {:else}
-                <p class="dfinityID">Dfinity ID: N/A</p>
-                <p class="username">Username: N/A</p>
-                <p class="name">Name: N/A</p>
-                <p class="surname">Surname: N/A</p>
-                <p class="age">Age: N/A</p>
-                <p class="height">Height: N/A</p>
-                <p class="weight">Weight: N/A</p>
-                <p class="location">Location: N/A</p>
+                    <p class="dfinityID">Dfinity ID: N/A</p>
+                    <p class="username">Username: N/A</p>
+                    <p class="name">Name: N/A</p>
+                    <p class="surname">Surname: N/A</p>
+                    <p class="age">Age: N/A</p>
+                    <p class="height">Height: N/A</p>
+                    <p class="weight">Weight: N/A</p>
+                    <p class="location">Location: N/A</p>
                 {/if}
             </div>
             <br>
@@ -234,11 +262,12 @@
         flex-direction: column;
         align-items: center;
         margin-left: 20px;
+        width: 150px;
     }
 
     .personPic img {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         margin-bottom: 20px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

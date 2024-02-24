@@ -1,11 +1,21 @@
 <script>
     import { backend } from "$lib/canisters";
     import { onMount } from "svelte";
+    function onLogout() {
+        backend.logout();
+        window.location.href = "/";
+    }
+    let department_name,
+        doctor_name,
+        selected_date,
+        selected_time = "";
+    let departments,
+        doctors,
+        dates,
+        times = [];
 
-    let department_name, doctor_name, selected_date, selected_time = "";
-    let departments, doctors, dates, times = [];
-
-    let userData, providerData = {};
+    let userData,
+        providerData = {};
     async function get_user_data() {
         try {
             const userDataString = await backend.get_current_user();
@@ -145,14 +155,13 @@
 <main>
     <navbar>
         <div class="logo">
-            <img src="../logo2.svg" alt="logo">
-        </div>
-        <div class="settings">
-            <button >Provider Settings</button>
+            <img src="../logo.png" alt="logo" />
         </div>
     </navbar>
-    <div class="providerContent">
-        <div class="sideBar">
+    <div class="generalContainer">
+        <div class="sections">
+            <h2>Provider Settings</h2>
+            <a href="/home">Home</a>
             <a href="/provider_management">Provider Management</a>
             <a href="/search_patients">Search Patients</a>
             <a href="/manage_patients">Manage Patients</a>
@@ -162,12 +171,13 @@
         <div class="container">
             <div class="section">
                 <h2>Departments</h2>
-                <button on:click={getDepartments}>List Departments</button>
                 {#if departments}
-                    {#each departments as department}
-                        <div class="department-option">{department}</div>
-                    {/each}
-                {/if}
+                {#each departments as department}
+                    <div class="department-option">{department}</div>
+                {/each}
+             {/if}
+                <button on:click={getDepartments}>List Departments</button>
+
                 <input
                     type="text"
                     placeholder="Enter department name"
@@ -177,7 +187,6 @@
             </div>
             <div class="section">
                 <h2>Doctors</h2>
-                <button on:click={getDoctors}>List Doctors</button>
                 <select
                     name="department-name"
                     id="department"
@@ -190,21 +199,21 @@
                         {/each}
                     {/if}
                 </select>
+                {#if doctors}
+                    {#each doctors as doctor}
+                        <div class="doctor-option">{doctor}</div>
+                    {/each}
+                {/if}
+                <button on:click={getDoctors}>List Doctors</button>
                 <input
                     type="text"
                     placeholder="Enter doctor name"
                     bind:value={doctor_name}
                 />
                 <button on:click={addDoctor}>Add Doctor</button>
-                {#if doctors}
-                    {#each doctors as doctor}
-                        <div class="doctor-option">{doctor}</div>
-                    {/each}
-                {/if}
             </div>
             <div class="section">
                 <h2>Appointment Dates</h2>
-                <button on:click={getDates}>List Appointment Dates</button>
                 <select name="doctor-name" id="doctor" bind:value={doctor_name}>
                     <option value="">Select Doctor</option>
                     {#if doctors}
@@ -213,18 +222,23 @@
                         {/each}
                     {/if}
                 </select>
-                <input type="date" bind:value={selected_date} />
-                <button on:click={addDate}>Add Date</button>
                 {#if dates}
                     {#each dates as date}
                         <div class="date-option">{date}</div>
                     {/each}
                 {/if}
+                <button on:click={getDates}>List Appointment Dates</button>
+
+                <input type="date" bind:value={selected_date} />
+                <button on:click={addDate}>Add Date</button>
             </div>
             <div class="section">
                 <h2>Appointment Times</h2>
-                <button on:click={getTimes}>List Appointment Times</button>
-                <select name="selected-date" id="date" bind:value={selected_date}>
+                <select
+                    name="selected-date"
+                    id="date"
+                    bind:value={selected_date}
+                >
                     <option value="">Select Date</option>
                     {#if dates}
                         {#each dates as date}
@@ -232,17 +246,19 @@
                         {/each}
                     {/if}
                 </select>
-                <input type="time" bind:value={selected_time} />
-                <button on:click={addTime}>Add Time</button>
                 {#if times}
                     {#each times as time}
                         <div class="time-option">{time}</div>
                     {/each}
                 {/if}
+                <button on:click={getTimes}>List Appointment Times</button>
+
+                <input type="time" bind:value={selected_time} />
+                <button on:click={addTime}>Add Time</button>
             </div>
         </div>
         <!-- Profile Section -->
-        <div class="providerProfile">
+        <div class="personalInformation">
             <div class="personPic">
                 <img src="../../person.png" alt="personPic" />
             </div>
@@ -273,36 +289,91 @@
                     <p class="surname">Provider Location: N/A</p>
                 {/if}
             </div>
+            <br />
+            <button on:click|preventDefault={onLogout}
+                >Click for logout..</button
+            >
         </div>
     </div>
-
 </main>
 
 <style>
     main {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
         flex-direction: column;
     }
 
-    .providerContent {
+    navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fcfcfc;
+        color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    .personalInformation {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .personPic img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: block;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #007bff;
+    }
+
+    main {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .generalContainer {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
     }
 
-    .sideBar {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
     }
-    .container {
-        display: flex;
-        flex: 5;
-        flex-direction: column;
-    }
-    .providerProfile {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+
+    button:hover {
+        background-color: #0056b3;
     }
 
     .section {
@@ -346,32 +417,8 @@
         background-color: #f9f9f9;
     }
 
-
-    navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 13px;
-        background-color: #007bff;
-        color: #fff;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
     .logo img {
         width: 100px;
         height: auto;
-    }
-
-    .settings button {
-        background-color: transparent;
-        border: none;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-
-    .settings button:hover {
-        color: #f0f0f0;
     }
 </style>

@@ -46,7 +46,7 @@
     }
 
     function goToProviderSettings(){
-        window.location.href = "/provider";
+        window.location.href = "/provider_management";
     }
 
     onMount(async () => {
@@ -72,6 +72,10 @@
 </main>
 
 <style>
+    main {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     navbar {
         display: flex;
         justify-content: space-between;

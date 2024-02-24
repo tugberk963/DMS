@@ -1,10 +1,12 @@
 <script>
     import { backend } from "$lib/canisters";
     import { onMount } from "svelte";
-
-    let department_name, doctor_name, selected_date, selected_time, patient_id, disease_name, medication_name = "";
+    function onLogout() {
+        backend.logout();
+        window.location.href = "/";
+    }
+    let patient_id, disease_name, medication_name = "";
     let allergy_name = "";
-    let departments, doctors, dates, times = [];
 
     let userData, providerData = {};
     async function get_user_data() {
@@ -67,14 +69,13 @@
 <main>
     <navbar>
         <div class="logo">
-            <img src="../logo2.svg" alt="logo">
-        </div>
-        <div class="settings">
-            <button >Provider Settings</button>
+            <img src="../logo.png" alt="logo" />
         </div>
     </navbar>
-    <div class="providerContent">
-        <div class="sideBar">
+    <div class="generalContainer">
+        <div class="sections">
+            <h2>Provider Settings</h2>
+            <a href="/home">Home</a>
             <a href="/provider_management">Provider Management</a>
             <a href="/search_patients">Search Patients</a>
             <a href="/manage_patients">Manage Patients</a>
@@ -108,7 +109,7 @@
             </div>
         </div>
         <!-- Profile Section -->
-        <div class="providerProfile">
+        <div class="personalInformation">
             <div class="personPic">
                 <img src="../../person.png" alt="personPic" />
             </div>
@@ -139,42 +140,99 @@
                     <p class="surname">Provider Location: N/A</p>
                 {/if}
             </div>
+            <br />
+            <button on:click|preventDefault={onLogout}
+                >Click for logout..</button
+            >
         </div>
     </div>
 
 </main>
 
 <style>
-    main {
+   main {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
         flex-direction: column;
     }
 
-    .providerContent {
+    navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fcfcfc;
+        color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    .personalInformation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .personPic img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: block;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #007bff;
+    }
+    input[type="text"]{
+        width: calc(100% - 12px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    main{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .generalContainer {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
     }
 
-    .sideBar {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-    }
-    .container {
-        display: flex;
-        flex: 5;
-        flex-direction: column;
-    }
-    .providerProfile {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
     }
 
-    .section {
-        flex-basis: 45%;
-        margin-bottom: 20px;
-    }
+    button:hover {
+        background-color: #0056b3;
+    }  
 
     h2 {
         margin-bottom: 10px;
@@ -190,55 +248,10 @@
         cursor: pointer;
     }
 
-    input[type="text"],
-    input[type="date"],
-    input[type="time"],
-    select {
-        width: calc(100% - 12px);
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .date-option,
-    .time-option,
-    .department-option,
-    .doctor-option {
-        margin-bottom: 5px;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #f9f9f9;
-    }
-
-
-    navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 13px;
-        background-color: #007bff;
-        color: #fff;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
 
     .logo img {
         width: 100px;
         height: auto;
-    }
-
-    .settings button {
-        background-color: transparent;
-        border: none;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-
-    .settings button:hover {
-        color: #f0f0f0;
     }
 </style>
 

@@ -333,6 +333,7 @@
 
 <style>
     main {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
         flex-direction: column;
     }

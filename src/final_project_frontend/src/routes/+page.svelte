@@ -26,7 +26,7 @@
           alert("User already exists.");
         }
         else {
-          alert("Signup succesfull. You can login now !.")
+          alert("Signup succesfull. You can login now.")
           console.log(res);
         }
       });
@@ -49,6 +49,9 @@
       }
 </script>
 <main>
+  <div class="logo">
+    <img src="./logo.png" alt="">
+  </div>
   <div class="formContainer">
     <div class="toggleButtons">
       <button on:click={toggleForm} class="{showLogin ? 'active' : ''}">Login</button>
@@ -67,8 +70,10 @@
 
 <style>
   main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     background-color: #f9f9f9;
@@ -102,7 +107,7 @@
   }
 
   .toggleButtons button.active {
-    background-color: #0056b3;
+    background-color: #d90a2c;
   }
 
   .formContainer h3 {
@@ -139,6 +144,6 @@
   }
 
   .formContainer button:hover {
-    background-color: #0056b3;
+    background-color: #104884;
   }
 </style>
