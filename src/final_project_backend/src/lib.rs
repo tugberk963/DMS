@@ -38,8 +38,10 @@ struct Session {
 struct PersonalData {
     pub name: String,
     pub surname: String,
-    pub age: u8,
     pub location: String,
+    pub age: String,
+    pub height: String,
+    pub weight: String,
 }
 
 // User Struct
@@ -55,8 +57,6 @@ struct User {
 
 #[derive(Clone, Debug, CandidType, Serialize)]
 struct HealthData {
-    pub height: u8,
-    pub weight: u8,
     pub allergies: Vec<String>,
     pub diseases: Vec<String>,
 }

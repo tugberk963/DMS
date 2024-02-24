@@ -1,4 +1,4 @@
-use crate::{PROVIDERS, Provider};
+use crate::{PROVIDERS};
 use ic_cdk::{query, update};
 use candid::Principal;
 use std::collections::HashMap;

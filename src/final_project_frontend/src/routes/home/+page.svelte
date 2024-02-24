@@ -30,7 +30,7 @@
     async function set_provider(identity) {
         try {
             await backend.set_provider(identity);
-            await user_is_provider(); // Yeniden sağlayıcı kontrolü yap
+            await user_is_provider();
         } catch (error) {
             console.error("Error setting provider:", error);
         }
@@ -39,7 +39,7 @@
     async function remove_provider(identity) {
         try {
             await backend.remove_provider(identity);
-            await user_is_provider(); // Yeniden sağlayıcı kontrolü yap
+            await user_is_provider();
         } catch (error) {
             console.error("Error removing provider:", error);
         }
@@ -66,7 +66,6 @@
             {/if}
             <button on:click={() => set_provider(userData.identity)}>Set Provider </button>
             <button on:click={() => remove_provider(userData.identity)}>Remove Provider</button>
-
         </div>
     </navbar>
     <User/>

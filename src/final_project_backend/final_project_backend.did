@@ -9,8 +9,6 @@ type AppointmentDetails = record {
 };
 type Appointments = record {Principal; vec AppointmentDetails};
 type HealthData = record {
-    height: nat8;
-    weight: nat8;
     allergies: vec text;
     diseases: vec text;
 };
@@ -18,8 +16,10 @@ type HealthData = record {
 type PersonalData = record {
     name: text;
     surname: text;
-    age: nat8;
     location: text;
+    age: text;
+    height: text;
+    weight: text;
 };
 
 type User = record {
@@ -63,6 +63,7 @@ service : {
   // user functions
   make_appointment: (text, text, text, text, text) -> (variant {Ok: null; Err: text});
   list_appointments : (text) -> (vec vec text);
+  edit_user_personal_data : (user_id: text, name: text, surname: text, location: text, age: text, height: text, weight: text) -> (variant {Ok: null; Err: text});
 
   // provider functions
   // listing

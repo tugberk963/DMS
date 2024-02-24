@@ -24,8 +24,8 @@ fn sign_up(username: String, password: String) -> Result<(), String> {
         username: username.to_string(),
         password: password.to_string(),
         appointments: HashMap::new(),
-        health_data: HealthData {height: 172, weight: 72, allergies: Vec::new(), diseases: Vec::new()},
-        personal_data: PersonalData{name: "John".to_string(), surname: "Doe".to_string() , age: 22, location: "Istanbul / Turkey".to_string()},
+        health_data: HealthData {allergies: Vec::new(), diseases: Vec::new()},
+        personal_data: PersonalData{name: "".to_string(), surname: "".to_string() , age: "".to_string(), height: "".to_string(), weight: "".to_string(), location: "".to_string()},
     };
 
     USERS.with(|users| users.borrow_mut().insert(new_user_id, new_user_credentials));

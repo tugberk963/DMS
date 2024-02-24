@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import {backend} from "$lib/canisters";    function onLogout() {
+    import { backend } from "$lib/canisters";    
+    function onLogout() {
         backend.logout();
         window.location.href = "/";
     }
@@ -20,8 +21,27 @@
         window.location.href = "/appointment";
     }
 
-    onMount(() => {
-        get_user_data();
+
+    async function editPersonalData(){
+        try {
+            console.log(await backend.edit_user_personal_data(
+                userData.identity,
+                userData.personal_data.name,
+                userData.personal_data.surname,
+                userData.personal_data.location,
+                userData.personal_data.age,
+                userData.personal_data.height,
+                userData.personal_data.weight,
+            ));
+        }
+        catch (error)
+        {
+            console.log("Editing user data failed.");
+        }
+    }
+
+    onMount(async () => {
+        await get_user_data();
     });
 </script>
 
@@ -55,6 +75,20 @@
             </div>
         </div>
         <div class="detailedContainer">
+            <!-- <div class="editPersonalInfo">
+                <h2>Enter your name: </h2>
+                <input type="text" bind:value={userData.personal_data.name}>
+                <h2>Enter your surname: </h2>
+                <input type="text" bind:value={userData.personal_data.surname}>
+                <h2>Enter your location: </h2>
+                <input type="text" bind:value={userData.personal_data.location}>
+                <h2>Enter your age: </h2>
+                <input type="text" bind:value={userData.personal_data.age}>
+                <h2>Enter your height: </h2>
+                <input type="text" bind:value={userData.personal_data.height}>
+                <h2>Enter your weight: </h2>
+                <input type="text" bind:value={userData.personal_data.weight}>
+            </div> -->
             <div class="makeAppointment">
                 {#if userData.appointments && Object.keys(userData.appointments).length > 0}
                     <h5>Current Appointments</h5>
@@ -132,17 +166,21 @@
                 <p class="name">Name: {userData.personal_data.name}</p>
                 <p class="surname">Surname: {userData.personal_data.surname}</p>
                 <p class="age">Age: {userData.personal_data.age}</p>
-                <p class="height">Height: {userData.health_data.height}</p>
-                <p class="weight">Weight: {userData.health_data.weight}</p>
+                <p class="height">Height: {userData.personal_data.height}</p>
+                <p class="weight">Weight: {userData.personal_data.weight}</p>
+                <p class="location">Location: {userData.personal_data.location}</p>
                 {:else}
                 <p class="dfinityID">Dfinity ID: N/A</p>
+                <p class="username">Username: N/A</p>
                 <p class="name">Name: N/A</p>
                 <p class="surname">Surname: N/A</p>
                 <p class="age">Age: N/A</p>
                 <p class="height">Height: N/A</p>
                 <p class="weight">Weight: N/A</p>
+                <p class="location">Location: N/A</p>
                 {/if}
             </div>
+            <br>
             <button on:click|preventDefault={onLogout}>Click for logout..</button>
         </div>
     </div>
