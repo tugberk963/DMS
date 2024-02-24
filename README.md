@@ -120,7 +120,18 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     └── user_utils.rs -> User functions
 ```
 ## Testing Process for Hackathon
-## &#9745; Auth Test
+To begin testing the environment as demonstrated in the GIFs below, follow these steps:
+```bash
+dfx start --clean
+```
+```bash
+dfx deploy
+```
+```bash
+npm start
+```
+After running these commands, you can test the application by accessing it at http://localhost:8080 in your web browser.
+## &#9745; Authentication 
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
 ## &#9745; Editing Personal Profile
 Patients can edit and manage their personal profiles.
