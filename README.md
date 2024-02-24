@@ -136,16 +136,21 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 fn logout()
 ```
 ### &#9745; Auth Test
-### Test on DMS MVP
+### Test on DMS Hackathon Version
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
-### Test Canister UI
+### Test on Canister UI Final Project
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif"> <br> </br>
 ## User Functionalities
-### &#9745; Listing Providers
-Users can list active providers ( Hospitals,  health clinics.) on DMS. 
+### &#9745; Editing Personal Profile
+Users can edit and manage their personal profiles.
 ```rust
-fn list_providers() -> Vec<String>
+B: fn edit_user_personal_data(user_id: String, name: String, surname: String, location: String, age: String, height: String, weight: String) -> Result<(), String>
+F: async function editPersonalData()
 ```
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/personalprofile.gif"> <br> </br>
+### &#9745; Users can list 
+Users can list active providers ( Hospitals,  health clinics.) on DMS. 
+
 ### &#9745; Listing Departments
 Users can list selected providers departments, for example Neurology.
 ```rust
