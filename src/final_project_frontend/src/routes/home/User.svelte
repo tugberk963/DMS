@@ -30,7 +30,7 @@
             console.log("User id", userData.identity);
             console.log(await backend.edit_user_personal_data(
                 userData.identity,
-                "tugberk",
+                name,
                 surname,
                 location,
                 age,
