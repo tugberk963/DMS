@@ -12,6 +12,7 @@
   - [Deploying Canisters](#deploying-canisters)
 - [Project Tree](#project-tree)
 - [Project Functionalities](#project-functionalities)
+  - [Testing Process for Hackathon](#testing-process-for-hackathon)
   - [Authentication](#authentication)
     - [Signup](#signup)
     - [Login](#login)
@@ -137,31 +138,30 @@ fn logout()
 ```
 
 ## Testing Process for Hackathon
-### &#9745; Auth Test
+## &#9745; Auth Test
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
-### &#9745; Editing Personal Profile
+## &#9745; Editing Personal Profile
 Patients can edit and manage their personal profiles.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/personal_profile.gif"> <br> </br>
-### &#9745; Provider Management 
-#### Creating a Provider
+## &#9745;Creating a Provider
 This function, normally, belongs to the Admin users. Since we are using one identity, for making the test and development process easier, It is available on users navbar.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/setting_provider.gif"> <br> </br>
-#### Provider Profile
+## &#9745; Editing Provider Profile
 Providers can edit their name and location. 
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/providerprofile.gif"> <br> </br>
-#### Managing Provider Submodules - Departments - Doctors - Appointment Dates & Times.
+## &#9745; Managing Provider Submodules - Departments - Doctors - Appointment Dates & Times.
 Providers can add create a department, add doctors to that department and manage their appointment dates and times.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/creatingappointment.gif"> <br> </br>
-#### Making an Appointment as an User.
+## &#9745; Making an Appointment as an User.
 Patients can see active providers on DMS and can make an appointment on desired departments, doctors, dates and times.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/takinganappointment.gif"> <br> </br>
-#### Managing and Viewing Health Data.
+## &#9745; Managing and Viewing Health Data.
 Patients can view their health data on DMS. Providers, can edit health data of desired patient/user.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/managinghealthdata.gif"> <br> </br>
-#### Searching Patients
+## &#9745;Searching Patients
 Providers can search desired patient and view their data.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/searchingpatients.gif"> <br> </br>
-#### &#9745; Listing Doctors
+## &#9745; Listing Doctors
 Users can list selected departments doctors.
 ```rust
 fn list_doctors(provider_id: String, department_name: String) -> Vec<String>
