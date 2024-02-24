@@ -42,6 +42,7 @@
 
 
 ## Project Name
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/logo.png"> <br> </br>
 DMS: Medical Service Provider on <b><a href="https://internetcomputer.org/"> Internet Computer </a></b>.
 <br> <br> <b> <i> DMS stands for Decentralized Medical Services. </b> </i> 
 ## Project Team - Individual
