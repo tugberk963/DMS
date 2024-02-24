@@ -177,25 +177,25 @@ After running these commands, you can test the application by accessing it at ht
 ## &#9745; Authentication 
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
 ## &#9745; Editing Personal Profile
-Patients can edit and manage their personal profiles.
+Patients have the ability to edit and manage their personal profiles within the system.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/personal_profile.gif"> <br> </br>
 ## &#9745;Creating a Provider
-This function, normally, belongs to the Admin users. Since we are using one identity, for making the test and development process easier, It is available on users navbar.
+This function, typically reserved for Admin users, has been made accessible on the user's navbar for convenience during the testing and development phase, as we are utilizing a single identity for these purposes.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/setting_provider.gif"> <br> </br>
 ## &#9745; Editing Provider Profile
-Providers can edit their name and location. 
+Providers  have the capability to edit their name and location within the system.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/providerprofile.gif"> <br> </br>
-## &#9745; Managing Provider Submodules - Departments - Doctors - Appointment Dates & Times.
-Providers can add create a department, add doctors to that department and manage their appointment dates and times.
+## &#9745; Provider Submodule Management: Departments, Doctors, and Appointment Scheduling
+Providers are able to create departments, add doctors to those departments, and manage their appointment schedules, including dates and times, within the system.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/creatingappointment.gif"> <br> </br>
 ## &#9745; Making an Appointment as an User.
-Patients can see active providers on DMS and can make an appointment on desired departments, doctors, dates and times.
+Patients have the ability to view active providers on the DMS and can schedule appointments with their desired departments, doctors, dates, and times.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/takinganappointment.gif"> <br> </br>
 ## &#9745; Managing and Viewing Health Data.
-Patients can view their health data on DMS. Providers, can edit health data of desired patient/user.
+Patients have access to view their own health data on the DMS. Meanwhile, providers are able to edit the health data of desired patients or users.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/managinghealthdata.gif"> <br> </br>
-## &#9745;Searching Patients
-Providers can search desired patient and view their data.
+## &#9745; Searching Patients
+Providers have the capability to search for desired patients and view their data within the system.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/searchingpatients.gif"> <br> </br>
 
 ## Project Functionalities
@@ -298,7 +298,6 @@ Providers can edit their info.
 ```rust
 fn edit_provider_info(provider_id: String, provider_name: String, provider_location: String) -> Result<(), String>
 ```
-
 
 ### &#9745; Listings
 Providers have access to the same listing functions available to users.
