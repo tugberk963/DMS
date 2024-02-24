@@ -26,7 +26,7 @@
           alert("User already exists.");
         }
         else {
-          alert("Signup succesfull. You can login now.")
+          alert("Signed up successfully. You can login now.")
           console.log(res);
         }
       });
