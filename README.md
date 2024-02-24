@@ -154,10 +154,10 @@ Providers can add create a department, add doctors to that department and manage
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/creatingappointment.gif"> <br> </br>
 #### Making an Appointment as an User.
 Patients can see active providers on DMS and can make an appointment on desired departments, doctors, dates and times.
-<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/takingappointment.gif"> <br> </br>
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/takinganappointment.gif"> <br> </br>
 #### Managing and Viewing Health Data.
 Patients can view their health data on DMS. Providers, can edit health data of desired patient/user.
-<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/takingappointment.gif"> <br> </br>
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/managinghealthdata.gif"> <br> </br>
 #### Searching Patients
 Providers can search desired patient and view their data.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/searchingpatients.gif"> <br> </br>
