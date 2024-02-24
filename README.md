@@ -51,9 +51,9 @@ I'm Tuğberk Serçe, a 22-year-old Senior Physics Student at Yildiz Technical Un
 DMS aims to revolutionize healthcare services by bringing together healthcare service providers (hospitals, health clinics, etc.) and patients on a unified platform. </br> </br> <strong> <strike> <i>  For final project, some of main functionalities of DMS built on Rust as a back-end canister. </i> </strike> </strong> </br> </br><strong><i>For the ICP Internship Bootcamp Mini Hackathon, some of the core functionalities of DMS have been designed and presented as a Full Stack dApp during the hackathon.</i></strong>
 ## Project Vision
 ### Problems DMS aiming to Solve
-National healthcare systems are localized, but DMS aims to transform this into a global and on-chain system on the Internet Computer Protocol (ICP).
+National healthcare systems are localized, but DMS aims to transform this into a global and on-chain system on the Internet Computer Protocol (ICP). </br> </br>
 Healthcare data is currently underutilized and not adequately leveraged by both patients and medical service providers.
-The operational structure of the healthcare system has remained stagnant for years, characterized by repetitive tasks.
+</br> </br> The operational structure of the healthcare system has remained stagnant for years, characterized by repetitive tasks.
 ### The Vision of DMS
 The primary vision of the DMS is to establish DMS as the <b>  <i> central platform for healthcare service providers and patients worldwide. </i> </b>
 <br>Through the vast data flow integrated into DMS, we empower its AI capabilities, transforming it into an efficient and proactive predictive healthcare service provider. <br> This strategic approach aims to revolutionize healthcare delivery, offering advanced and personalized services to users globally.
