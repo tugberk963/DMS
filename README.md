@@ -215,17 +215,17 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 ```rust
 fn logout()
 ```
-## &#9745; Viewing Provider Info
+###  &#9745; Editing Personal Profile
 Users can edit their Personal Profile.
 ```rust
 fn edit_user_personal_data(user_id: String, name: String, surname: String, location: String, age: String, height: String, weight: String) -> Result<(), String> 
 ```
-## &#9745; Viewing Provider Info
+###  &#9745; Viewing Provider Info
 Users can view provider info. Provider name, location, departments etc.
 ```rust
 fn get_provider_info(provider_id: String) -> Option<String> 
 ```
-## &#9745; Listing Doctors
+###  &#9745; Listing Doctors
 Users can list selected departments doctors.
 ```rust
 fn list_doctors(provider_id: String, department_name: String) -> Vec<String>
