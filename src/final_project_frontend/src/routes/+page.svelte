@@ -39,7 +39,6 @@
       backend.login(username, password).then((res) => {
         if (res.Err){
           alert("Login failed.");
-          window.location.href = "/home";
         }
         else {
           console.log(res);
