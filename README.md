@@ -136,6 +136,9 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 fn logout()
 ```
 ### &#9745; Auth Test
+### Test on DMS MVP
+<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
+### Test Canister UI
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth-test.gif"> <br> </br>
 ## User Functionalities
 ### &#9745; Listing Providers
