@@ -18,6 +18,8 @@
     - [Login](#login)
     - [Logout](#logout)
   - [User Functionalities](#user-functionalities)
+    - [Editing Personal Profile](#editing-personal-profile)
+    - [Viewing Provider Info](#viewing-provider-info) 
     - [Listing Providers](#listing-providers)
     - [Listing Departments](#listing-departments)
     - [Listing Doctors](#listing-doctors)
@@ -31,6 +33,12 @@
     - [Adding Dates](#adding-dates)
     - [Adding Times](#adding-times)
     - [Listings](#listings)
+    - [Getting Patient Info](#getting-patient-info)
+    - [Adding Disease](#adding-disease)
+    - [Adding Allergy](#adding-allergy)
+    - [Adding Medications](#adding-medications)
+    - [Editing Provider Info](#editing-provider-info)
+    - [Listing](#listing)
   - [Admin Functionalities](#admin-functionalities)
     - [Listing Signed Users](#listing-signed-users)
     - [Listing Active Sessions](#listing-active-sessions)
@@ -39,7 +47,6 @@
     - [Listing Providers](#listing-providers)
     - [Removing Providers](#removing-providers)
 - [Further Moves](#further-moves)
-
 
 ## Project Name
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/logo.png"> <br> </br>
