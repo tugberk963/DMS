@@ -119,24 +119,6 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
     ├── provider_utils.rs -> Medical Service Provider functions.
     └── user_utils.rs -> User functions
 ```
-## Project Functionalities
-## Authentication 
-### &#9745; Signup
-Users can signup to DMS with desired username and password.
-```rust
-fn sign_up(username: String, password: String) -> Result<(), String>
-```
-### &#9745; Login
-When users login with their username and password, if the credentials are correct. Login function adds their Principal ID to ACTIVE_SESSIONS.
-```rust
-fn login(username: String, password: String) -> Result<(), String>
-```
-### &#9745; Logout
-When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSIONS.
-```rust
-fn logout()
-```
-
 ## Testing Process for Hackathon
 ## &#9745; Auth Test
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/auth.gif"> <br> </br>
@@ -161,6 +143,24 @@ Patients can view their health data on DMS. Providers, can edit health data of d
 ## &#9745;Searching Patients
 Providers can search desired patient and view their data.
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/searchingpatients.gif"> <br> </br>
+
+## Project Functionalities
+## Authentication 
+### &#9745; Signup
+Users can signup to DMS with desired username and password.
+```rust
+fn sign_up(username: String, password: String) -> Result<(), String>
+```
+### &#9745; Login
+When users login with their username and password, if the credentials are correct. Login function adds their Principal ID to ACTIVE_SESSIONS.
+```rust
+fn login(username: String, password: String) -> Result<(), String>
+```
+### &#9745; Logout
+When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSIONS.
+```rust
+fn logout()
+```
 ## &#9745; Listing Doctors
 Users can list selected departments doctors.
 ```rust
@@ -242,8 +242,6 @@ Admins can remove a provider from providers lists.
 ```rust
 fn remove_provider(user_id: String) -> Result<(), String> 
 ```
-### &#9745; Admin Test
-<br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/admin-test.gif"> <br> </br>
 ## Further Moves
 ### &#9745;  Front-end will be developed using Svelte. 
 ### &#9745;  Users can view their health data within the system. 
