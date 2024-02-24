@@ -39,6 +39,7 @@
                     providerData.provider_location,
                 ),
             );
+            alert("Provider Data successfully changed.");
         } catch (error) {
             console.error("Changing Provider Info failed", error);
         }

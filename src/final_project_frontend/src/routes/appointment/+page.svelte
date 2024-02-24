@@ -105,11 +105,14 @@
                     selected_time,
                 );
                 console.log("Appointment created.");
+                alert("Appointment created.");
             } catch (error) {
                 console.error("Making appointment failed.", error);
+                alert("Making appointment failed.");
             }
         else {
             console.error("Provider data can't be empty.");
+            alert("Provider data can't be empty.");
         }
     }
 

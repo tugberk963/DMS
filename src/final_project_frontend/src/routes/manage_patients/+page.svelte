@@ -36,6 +36,7 @@
     async function addDisease() {
         try {
             console.log(await backend.add_disease(userData.identity, disease_name));
+            alert("Disease added.");
         }
         catch(e){
             console.log("Error when adding disease", e);
@@ -45,6 +46,7 @@
     async function addAllergy() {
         try {
             console.log(await backend.add_allergy(userData.identity, allergy_name));
+            alert("Allergy added.");
         }
         catch(e){
             console.log("Error when adding allergy", e);
@@ -54,6 +56,7 @@
     async function addMedication() {
         try {
             console.log(await backend.add_medication(userData.identity, medication_name));
+            alert("Medication added.");
         }
         catch(e){
             console.log("Error when adding medication", e);

@@ -57,6 +57,7 @@
                     department_name,
                 ),
             );
+            alert("Department successfully added.");
         } catch (error) {
             console.error("Adding department failed.", error);
         }
@@ -83,6 +84,7 @@
                     doctor_name,
                 ),
             );
+            alert("Doctor successfully added.");
         } catch (error) {
             console.error("Adding doctor failed.", error);
         }
@@ -111,6 +113,7 @@
                     selected_date,
                 ),
             );
+            alert("Date successfully added.");
         } catch (error) {
             console.error("Adding date failed.", error);
         }
@@ -141,6 +144,7 @@
                     selected_time,
                 ),
             );
+            alert("Time successfully added.");
         } catch (error) {
             console.error("Adding time failed.", error);
         }

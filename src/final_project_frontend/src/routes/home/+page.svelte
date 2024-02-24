@@ -31,6 +31,7 @@
         try {
             await backend.set_provider(identity);
             await user_is_provider();
+            alert("Provider successfully added.");  
         } catch (error) {
             console.error("Error setting provider:", error);
         }
@@ -40,6 +41,7 @@
         try {
             await backend.remove_provider(identity);
             await user_is_provider();
+            alert("Provider successfully removed.");  
         } catch (error) {
             console.error("Error removing provider:", error);
         }

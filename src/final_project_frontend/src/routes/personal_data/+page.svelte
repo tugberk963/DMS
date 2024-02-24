@@ -39,6 +39,7 @@
                     weight,
                 ),
             );
+            alert("Personal data changed succesfully.");
         } catch (error) {
             console.log("Editing user data failed.");
         }

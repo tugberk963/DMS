@@ -82,14 +82,14 @@
                 <div class="nearHospitals">
                     <h5>Closest DMS Providers</h5>
                     <p>
-                        See nearest DMS Providers. Hospitals, health clinics etc.
+                        See nearest DMS Providers.
                     </p>
                     <img src="../hospital.png" alt="">
                 </div>
                 <div class="nearPharmacy">
-                    <h5>Closest DMS Pharmacy</h5>
+                    <h5>Closest DMS Pharmacies</h5>
                     <p>
-                        See nearest DMS Providers. Hospitals, health clinics etc.
+                        See nearest DMS Pharmacies. 
                     </p>
                     <img src="../pharmacy.png" alt="">
                 </div>
@@ -187,7 +187,7 @@
     }
 
     .sections {
-        flex: 5;
+        flex: 1;
         display: flex;
         flex-direction: column;
     }
@@ -313,19 +313,19 @@
     }
 
     .dateSection {
-        background-color: #007bff;
-        color: #fff;
+        border: 1px solid grey;
+        color: black;
         border-radius: 50%;
         padding: 10px;
     }
 
     .visitDate {
-        font-size: 18px;
-        margin-left: 10px;
+        font-size: 20px;
+        margin-left: 5px;
     }
 
     .visitDetails {
-        margin-left: 20px;
+        margin: 20px;
     }
 
     .providerName, .departmentName, .doctorName {
