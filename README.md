@@ -245,14 +245,11 @@ fn remove_provider(user_id: String) -> Result<(), String>
 ### &#9745; Admin Test
 <br> <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Final_Project/blob/main/admin-test.gif"> <br> </br>
 ## Further Moves
-Project's development will continue until hackathon process. To-Do list of improvement ideas until hackathon date are below:
-### [ ] Front-end will be developed on Svelte
-### [ ] Users can view their health data on system
-### [ ] Users can view their result data on system
-### [ ] Users can view their drug use history data on system
-### [ ] Providers can update & view patients health data on system
-### [ ] Providers can update & view result data on system
-### [ ] Providers can update & view drug use history data on system
-### [ ] More security checks should be added to Admin & Provider user.
-### [ ] Providers should be accessible with their name.
-### [ ] Providers may have sub modules, for their doctors etc. So doctors do data management & update with seperate accounts which is linked to that provider. This may require an account linking system.
+### &#9745;  <strike> Front-end will be developed using Svelte. <strike>
+### &#9745;  <strike> Users can view their health data within the system.<strike>
+### &#9745;  <strike> Users can view their medication data within the system.<strike>
+### &#9745;  <strike> Providers can update and view patients' health data within the system. <strike>
+### &#9745;  <strike> Providers can update and view patients' medication data within the system.<strike>
+### &#9745;  <strike> Providers should be accessible by their name.<strike>
+### [ ] Since one of the aims of DMS is to make medical data valuable, accessing and viewing a patient's information must require certain measures. Therefore, the next development goal is to adjust a grant system for this purpose.
+### [ ] Providers may have sub-modules for their doctors, etc., so doctors can perform data management and updates with separate accounts that are linked to that provider. This may necessitate an account linking system.
