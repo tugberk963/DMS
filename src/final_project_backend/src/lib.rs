@@ -59,6 +59,7 @@ struct User {
 struct HealthData {
     pub allergies: Vec<String>,
     pub diseases: Vec<String>,
+    pub medications: Vec<String>,
 }
 
 #[derive(Clone, Debug, CandidType, Serialize)]

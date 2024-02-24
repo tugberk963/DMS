@@ -11,6 +11,7 @@ type Appointments = record {Principal; vec AppointmentDetails};
 type HealthData = record {
     allergies: vec text;
     diseases: vec text;
+    medications: vec text;
 };
 
 type PersonalData = record {
@@ -72,7 +73,9 @@ service : {
   list_dates: (provider_id: text, department_name: text, doctors_name: text) -> (vec text);
   list_times: (provider_id: text, department_name: text, doctors_name: text, selected_date: text) -> (vec text);
   get_provider_info: (provider_id: text) -> (opt text); 
+  get_patient_info: (provider_id: text) -> (opt text); 
   edit_provider_info: (provider_id: text, provider_name: text, provider_location: text) -> (variant {Ok: null; Err: text});
+
 
 
   // adding
@@ -80,6 +83,10 @@ service : {
   add_doctor : (provider_id: text, department_name: text, doctor_name: text) -> (variant {Ok: null; Err: text});
   add_date : (provider_id: text, department_name: text, doctor_name: text, date: text) -> (variant {Ok: null; Err: text});
   add_time : (provider_id: text, department_name: text, doctor_name: text, date: text, time: text) -> (variant {Ok: null; Err: text});
+  add_disease : (user_id: text, disease_name: text) -> (variant {Ok: null; Err: text});
+  add_allergy : (user_id: text, allergy_name: text) -> (variant {Ok: null; Err: text});
+  add_medication : (user_id: text, medication_name: text) -> (variant {Ok: null; Err: text});
+
 
   get_current_user : () -> (opt text);
 };

@@ -121,7 +121,7 @@ fn edit_user_personal_data(user_id: String, name: String, surname: String, locat
     USERS.with(|users| {
         let mut users = users.borrow_mut();
         if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found.")) {
-            let mut personal_data = &mut user.personal_data;
+            let personal_data = &mut user.personal_data;
 
             personal_data.name = name;
             personal_data.surname = surname;

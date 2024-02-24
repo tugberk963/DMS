@@ -58,7 +58,7 @@
 <main>
     <navbar>
         <div class="logo">
-            <img src="../logo2.svg" alt="logo">
+            <img src="../logo.png" alt="logo">
         </div>
         <div class="settings">
             {#if isProvider}
@@ -77,7 +77,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: #007bff;
+        background-color: #fcfcfc;
         color: #fff;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
@@ -90,7 +90,7 @@
     .settings button {
         background-color: transparent;
         border: none;
-        color: #fff;
+        color: #a63d3d;
         font-size: 16px;
         cursor: pointer;
         transition: color 0.3s;

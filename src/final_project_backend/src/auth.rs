@@ -24,7 +24,7 @@ fn sign_up(username: String, password: String) -> Result<(), String> {
         username: username.to_string(),
         password: password.to_string(),
         appointments: HashMap::new(),
-        health_data: HealthData {allergies: Vec::new(), diseases: Vec::new()},
+        health_data: HealthData {allergies: Vec::new(), diseases: Vec::new(), medications: Vec::new()},
         personal_data: PersonalData{name: "".to_string(), surname: "".to_string() , age: "".to_string(), height: "".to_string(), weight: "".to_string(), location: "".to_string()},
     };
 

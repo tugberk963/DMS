@@ -31,112 +31,6 @@
         }
     }
 
-    async function getDepartments() {
-        try {
-            departments = await backend.list_departments(userData.identity);
-            console.log(departments);
-        } catch (error) {
-            console.error("Fetching departments failed.", error);
-        }
-    }
-
-    async function addDepartment() {
-        try {
-            console.log(
-                await backend.add_department(
-                    userData.identity,
-                    department_name,
-                ),
-            );
-        } catch (error) {
-            console.error("Adding department failed.", error);
-        }
-    }
-
-    async function getDoctors() {
-        try {
-            doctors = await backend.list_doctors(
-                userData.identity,
-                department_name,
-            );
-            console.log(doctors);
-        } catch (error) {
-            console.error("Fetching doctors failed.", error);
-        }
-    }
-
-    async function addDoctor() {
-        try {
-            console.log(
-                await backend.add_doctor(
-                    userData.identity,
-                    department_name,
-                    doctor_name,
-                ),
-            );
-        } catch (error) {
-            console.error("Adding doctor failed.", error);
-        }
-    }
-
-    async function getDates() {
-        try {
-            dates = await backend.list_dates(
-                userData.identity,
-                department_name,
-                doctor_name,
-            );
-            console.log(dates);
-        } catch (error) {
-            console.error("Fetching appointment dates failed.", error);
-        }
-    }
-
-    async function addDate() {
-        try {
-            console.log(
-                await backend.add_date(
-                    userData.identity,
-                    department_name,
-                    doctor_name,
-                    selected_date,
-                ),
-            );
-        } catch (error) {
-            console.error("Adding date failed.", error);
-        }
-    }
-
-    async function getTimes() {
-        try {
-            times = await backend.list_times(
-                userData.identity,
-                department_name,
-                doctor_name,
-                selected_date,
-            );
-            console.log(times);
-        } catch (error) {
-            console.error("Fetching appointment times failed.", error);
-        }
-    }
-
-    async function addTime() {
-        try {
-            console.log(
-                await backend.add_time(
-                    userData.identity,
-                    department_name,
-                    doctor_name,
-                    selected_date,
-                    selected_time,
-                ),
-            );
-        } catch (error) {
-            console.error("Adding time failed.", error);
-        }
-    }
-
     async function addDisease() {
         try {
             console.log(await backend.add_disease(userData.identity, disease_name));
@@ -181,7 +75,7 @@
     </navbar>
     <div class="providerContent">
         <div class="sideBar">
-            <a href="/provider_management">Management</a>
+            <a href="/provider_management">Provider Management</a>
             <a href="/search_patients">Search Patients</a>
             <a href="/manage_patients">Manage Patients</a>
             <a href="/provider_profile">Provider Profile</a>
@@ -211,87 +105,6 @@
                 <h2>Enter Medication Name: </h2>
                 <input type="text" bind:value={medication_name} />
                 <button on:click={addMedication}>Add Medication</button>
-            </div>
-
-            <div class="section">
-                <h2>Departments</h2>
-                <button on:click={getDepartments}>List Departments</button>
-                {#if departments}
-                    {#each departments as department}
-                        <div class="department-option">{department}</div>
-                    {/each}
-                {/if}
-                <input
-                    type="text"
-                    placeholder="Enter department name"
-                    bind:value={department_name}
-                />
-                <button on:click={addDepartment}>Add Department</button>
-            </div>
-            <div class="section">
-                <h2>Doctors</h2>
-                <button on:click={getDoctors}>List Doctors</button>
-                <select
-                    name="department-name"
-                    id="department"
-                    bind:value={department_name}
-                >
-                    <option value="">Select Department</option>
-                    {#if departments}
-                        {#each departments as department}
-                            <option value={department}>{department}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input
-                    type="text"
-                    placeholder="Enter doctor name"
-                    bind:value={doctor_name}
-                />
-                <button on:click={addDoctor}>Add Doctor</button>
-                {#if doctors}
-                    {#each doctors as doctor}
-                        <div class="doctor-option">{doctor}</div>
-                    {/each}
-                {/if}
-            </div>
-            <div class="section">
-                <h2>Appointment Dates</h2>
-                <button on:click={getDates}>List Appointment Dates</button>
-                <select name="doctor-name" id="doctor" bind:value={doctor_name}>
-                    <option value="">Select Doctor</option>
-                    {#if doctors}
-                        {#each doctors as doctor}
-                            <option value={doctor}>{doctor}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input type="date" bind:value={selected_date} />
-                <button on:click={addDate}>Add Date</button>
-                {#if dates}
-                    {#each dates as date}
-                        <div class="date-option">{date}</div>
-                    {/each}
-                {/if}
-            </div>
-            <div class="section">
-                <h2>Appointment Times</h2>
-                <button on:click={getTimes}>List Appointment Times</button>
-                <select name="selected-date" id="date" bind:value={selected_date}>
-                    <option value="">Select Date</option>
-                    {#if dates}
-                        {#each dates as date}
-                            <option value={date}>{date}</option>
-                        {/each}
-                    {/if}
-                </select>
-                <input type="time" bind:value={selected_time} />
-                <button on:click={addTime}>Add Time</button>
-                {#if times}
-                    {#each times as time}
-                        <div class="time-option">{time}</div>
-                    {/each}
-                {/if}
             </div>
         </div>
         <!-- Profile Section -->
@@ -428,3 +241,4 @@
         color: #f0f0f0;
     }
 </style>
+

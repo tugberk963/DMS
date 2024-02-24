@@ -6,7 +6,7 @@
         window.location.href = "/";
     }
     let userData = {};
-    let name, surname, location, age, height, weight = '';
+    let name = '';
     
     async function get_user_data() {
         try {
@@ -23,27 +23,6 @@
         window.location.href = "/appointment";
     }
 
-
-    async function editPersonalData(){
-        try {
-            console.log("Name: ", name);
-            console.log("User id", userData.identity);
-            console.log(await backend.edit_user_personal_data(
-                userData.identity,
-                name,
-                surname,
-                location,
-                age,
-                height,
-                weight,
-            ));
-        }
-        catch (error)
-        {
-            console.log("Editing user data failed.");
-        }
-    }
-
     onMount(async () => {
         await get_user_data();
         console.log("Name: ",name);
@@ -52,51 +31,20 @@
 
 
 <main>
-    <!-- <navbar> 
-        <div class="logo">
-            <img src="../logo2.svg" alt="logo">
-        </div>
-        <div class="settings">
-            <button>Settings</button>
-        </div>
-    </navbar> -->
     <div class="homeScreen">
         <div class="sections">
             <div class="general">
                 <h2>General</h2>
                 <a href="/">DMS AI</a>
-                <a href="/">Visits</a>
-                <a href="/">Prescriptions</a>
-                <a href="/">Diseases</a>
-                <a href="/">Tests</a>
-            </div>
-            <div class="explore">
-                <h2>Explore</h2>
-                <a href="/">Appointment</a>
-                <a href="/">Allergies</a>
-                <a href="/">Medications</a>
-                <a href="/">Documents</a>
-                <a href="/">Vaccinations Calendar</a>
+                <a href="/visits">Visits</a>
+                <a href="/diseases">Diseases</a>
+                <a href="/allergies">Allergies</a>
+                <a href="/medications">Medications</a>
+                <a href="/personal_data">Personal Data</a>
             </div>
         </div>
         <div class="detailedContainer">
-            <div class="editPersonalInfo">
-                <form on:submit={editPersonalData} action="">
-                <h2>Enter your name: </h2>
-                <input type="text" bind:value={name}>
-                <h2>Enter your surname: </h2>
-                <input type="text" bind:value={surname}>
-                <h2>Enter your location: </h2>
-                <input type="text" bind:value={location}>
-                <h2>Enter your age: </h2>
-                <input type="text" bind:value={age}>
-                <h2>Enter your height: </h2>
-                <input type="text" bind:value={height}>
-                <h2>Enter your weight: </h2>
-                <input type="text" bind:value={weight}>
-                <button type="submit">Save</button>
-            </form>
-            </div> 
+
             <div class="makeAppointment">
                 {#if userData.appointments && Object.keys(userData.appointments).length > 0}
                     <h5>Current Appointments</h5>
@@ -165,7 +113,7 @@
         </div>
         <div class="personalInformation">
             <div class="personPic">
-                <img src="../../person.jpeg" alt="personPic">
+                <img src="../../person.png" alt="personPic">
             </div>
             <div class="personalData">
                 {#if userData && userData.personal_data && userData.health_data}
@@ -211,11 +159,12 @@
     }
 
     .sections {
+        flex: 5;
         display: flex;
         flex-direction: column;
     }
 
-    .general, .explore {
+    .general {
         margin-right: 20px;
     }
 

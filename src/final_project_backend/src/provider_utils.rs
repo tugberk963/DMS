@@ -1,4 +1,4 @@
-use crate::{PROVIDERS};
+use crate::{PROVIDERS, USERS};
 use ic_cdk::{query, update};
 use candid::Principal;
 use std::collections::HashMap;
@@ -170,6 +170,27 @@ fn add_time(provider_id: String, department_name: String, doctor_name: String, d
 }
 
 #[query]
+fn get_patient_info(patient_id: String) -> Option<String> {
+    USERS.with(|users| {
+        let users = users.borrow();
+        if let Some(user) = users.get(&Principal::from_text(&patient_id).expect("User not found.")) {
+            // Converts user data to JSON object
+            let user_json = serde_json::json!({
+                "identity": user.identity,
+                "username": user.username,
+                "password": user.password,
+                "appointments": user.appointments,
+                "health_data": user.health_data,
+                "personal_data": user.personal_data,
+            });
+            Some(user_json.to_string())
+        } else {
+            None
+        }
+    })
+}
+
+#[query]
 fn get_provider_info(provider_id: String) -> Option<String> {
     PROVIDERS.with(|providers| {
         let providers = providers.borrow();
@@ -201,3 +222,60 @@ fn edit_provider_info(provider_id: String, provider_name: String, provider_locat
         }
     })
 }
+
+#[update]
+fn add_disease(user_id: String, disease_name: String) -> Result<(), String>{
+    USERS.with(|users| 
+        {
+            let mut users = users.borrow_mut();
+            if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found."))
+            {
+                user.health_data.diseases.push(disease_name);
+                Ok(())
+            }
+            else{
+                Err("User not found.".to_string())
+            }
+        }
+    )
+}
+
+#[update]
+fn add_allergy(user_id: String, allergy_name: String) -> Result<(), String>{
+    USERS.with(|users| 
+        {
+            let mut users = users.borrow_mut();
+            if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found."))
+            {
+                user.health_data.allergies.push(allergy_name);
+                Ok(())
+            }
+            else{
+                Err("User not found.".to_string())
+            }
+        }
+    )
+}
+
+#[update]
+fn add_medication(user_id: String, medication_name: String) -> Result<(), String>{
+    USERS.with(|users| 
+        {
+            let mut users = users.borrow_mut();
+            if let Some(user) = users.get_mut(&Principal::from_text(&user_id).expect("User not found."))
+            {
+                user.health_data.medications.push(medication_name);
+                Ok(())
+            }
+            else{
+                Err("User not found.".to_string())
+            }
+        }
+    )
+}
+
+// #[update]
+// fn add_medicine(user_id: String, medicine: String) -> Result<(), String>
+// {
+
+// }

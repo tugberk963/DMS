@@ -2,8 +2,7 @@
     import { backend } from "$lib/canisters";
     import { onMount } from "svelte";
 
-    let department_name, doctor_name, selected_date, selected_time, patient_id, disease_name, medication_name = "";
-    let allergy_name = "";
+    let department_name, doctor_name, selected_date, selected_time = "";
     let departments, doctors, dates, times = [];
 
     let userData, providerData = {};
@@ -137,33 +136,6 @@
         }
     }
 
-    async function addDisease() {
-        try {
-            console.log(await backend.add_disease(userData.identity, disease_name));
-        }
-        catch(e){
-            console.log("Error when adding disease", e);
-        }
-    }
-
-    async function addAllergy() {
-        try {
-            console.log(await backend.add_allergy(userData.identity, allergy_name));
-        }
-        catch(e){
-            console.log("Error when adding allergy", e);
-        }
-    }
-
-    async function addMedication() {
-        try {
-            console.log(await backend.add_medication(userData.identity, medication_name));
-        }
-        catch(e){
-            console.log("Error when adding medication", e);
-        }
-    }
-
     onMount(async () => {
         await get_user_data();
         await getProviderData();
@@ -181,38 +153,13 @@
     </navbar>
     <div class="providerContent">
         <div class="sideBar">
-            <a href="/provider_management">Management</a>
+            <a href="/provider_management">Provider Management</a>
             <a href="/search_patients">Search Patients</a>
             <a href="/manage_patients">Manage Patients</a>
             <a href="/provider_profile">Provider Profile</a>
         </div>
         <!-- Middle Container for Detailed Actions -->
         <div class="container">
-            <div class="addDisease">
-                <h2>Add Disease to Patient</h2>
-                <h2>Enter Patient ID:</h2>
-                <input type="text" bind:value={patient_id} />
-                <h2>Enter Disease Name: </h2>
-                <input type="text" bind:value={disease_name} />
-                <button on:click={addDisease}>Add Disease</button>
-            </div>
-            <div class="addAllergy">
-                <h2>Add Allergy to Patient</h2>
-                <h2>Enter Patient ID:</h2>
-                <input type="text" bind:value={patient_id} />
-                <h2>Enter Allergy Name: </h2>
-                <input type="text" bind:value={allergy_name} />
-                <button on:click={addAllergy}>Add Allergy</button>
-            </div>
-            <div class="addMedication">
-                <h2>Add Medication to Patient</h2>
-                <h2>Enter Patient ID:</h2>
-                <input type="text" bind:value={patient_id} />
-                <h2>Enter Medication Name: </h2>
-                <input type="text" bind:value={medication_name} />
-                <button on:click={addMedication}>Add Medication</button>
-            </div>
-
             <div class="section">
                 <h2>Departments</h2>
                 <button on:click={getDepartments}>List Departments</button>

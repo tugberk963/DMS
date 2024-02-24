@@ -1,7 +1,6 @@
 <script>
     import { backend } from "$lib/canisters";
     import { onMount } from "svelte";
-    import User from "../home/User.svelte";
 
     let providers = [];
     let departments = [];
@@ -74,8 +73,6 @@
         }
     }
 
-
-   // fn make_appointment(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>{
     async function makeAppointment(){
         if (userData.identity && department_name && doctor_name && selected_date && selected_time)
             try {
