@@ -215,6 +215,16 @@ When user wants to log off. Their Principal ID will be removed from ACTIVE_SESSI
 ```rust
 fn logout()
 ```
+## &#9745; Viewing Provider Info
+Users can edit their Personal Profile.
+```rust
+fn edit_user_personal_data(user_id: String, name: String, surname: String, location: String, age: String, height: String, weight: String) -> Result<(), String> 
+```
+## &#9745; Viewing Provider Info
+Users can view provider info. Provider name, location, departments etc.
+```rust
+fn get_provider_info(provider_id: String) -> Option<String> 
+```
 ## &#9745; Listing Doctors
 Users can list selected departments doctors.
 ```rust
@@ -262,6 +272,34 @@ Providers can add appointment times to their appointment dates.
 ```rust
 fn add_time(provider_id: String, department_name: String, doctor_name: String, date: String, time: String) -> Result <(), String>
 ```
+### &#9745; Getting Patient Info
+Providers can get patient info.
+```rust
+fn get_patient_info(patient_id: String) -> Option<String>
+```
+### &#9745; Adding Disease
+Providers can add disease to patients' health data.
+```rust
+fn add_disease(user_id: String, disease_name: String) -> Result<(), String>
+```
+### &#9745; Adding Allergy
+Providers can add allergy to patients' health data.
+```rust
+fn add_allergy(user_id: String, allergy_name: String) -> Result<(), String>{
+```
+### &#9745; Adding Medications
+Providers can add medications to patients' health data.
+```rust
+fn add_medication(user_id: String, medication_name: String) -> Result<(), String>{
+```
+
+### &#9745; Adding Medications
+Providers can edit their info.
+```rust
+fn edit_provider_info(provider_id: String, provider_name: String, provider_location: String) -> Result<(), String>
+```
+
+
 ### &#9745; Listings
 Providers have access to the same listing functions available to users.
 ## Admin Functionalities
